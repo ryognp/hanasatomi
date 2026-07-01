@@ -19,3 +19,6 @@ hanasatomi_typography_v2.html
 # 開発・運用用（公開サイトには不要）
 tasks/
 .claude/
+
+# 配布用ZIP
+*.zip
