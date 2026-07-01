@@ -28,11 +28,13 @@
   <div class="container">
     <a href="/" class="brand">はなさとみ<small>HANASATOMI</small></a>
     <nav class="nav" id="site-nav">
+      <a href="/">トップ</a>
       <a href="/about/">はなさとみについて</a>
+      <a href="#jinenjo">自然薯について</a>
       <a href="/wholesale/">飲食店・小売店の方へ</a>
       <a href="/coming-soon/">一般販売について</a>
-      <a href="/contact/">お問い合わせ</a>
-      <a href="/line/" class="btn btn--primary">LINEで登録</a>
+      <a href="#company">会社概要</a>
+      <a href="/line/" class="btn btn--primary">LINEで登録する</a>
     </nav>
     <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
@@ -40,54 +42,61 @@
   </div>
 </header>
 
-<!-- 1. First view (split) -->
-<section class="hero hero--split">
-  <svg class="leaf-deco leaf-deco--tr leaf-deco--pink" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-    <path d="M40 180 C 60 120, 90 90, 150 40"/>
-    <path d="M95 96 C 80 70, 90 55, 120 60 C 110 85, 100 95, 95 96 Z"/>
-    <path d="M120 70 C 130 45, 150 40, 168 52 C 150 78, 132 78, 120 70 Z"/>
-    <path d="M70 130 C 55 110, 60 92, 88 96 C 82 120, 78 130, 70 130 Z"/>
-  </svg>
-  <div class="container hero-grid">
-    <div class="hero-copy">
+<!-- 1. Hero / ファーストビュー（フルブリード） -->
+<section class="hero-renewal" id="top">
+  <div class="hero-renewal__grid">
+    <div class="hero-renewal__content">
       <span class="eyebrow">茨城県北茨城市 ｜ 自然薯農家</span>
       <h1>土の香りごと、<br>やさしく届ける<span class="nb">自然薯を。</span></h1>
-      <p class="lead">株式会社はなさとみは、茨城県北茨城市で自然薯を育てる自然薯農家です。2026年11月の初出荷に向けて、飲食店・小売店さまへの先行案内と、一般販売のお知らせ登録を受け付けています。</p>
-      <div class="hero-actions">
-        <a href="/line/" class="btn btn--primary">LINEで最新情報を受け取る</a>
-        <a href="/wholesale/" class="btn btn--secondary">飲食店・小売店さまはこちら</a>
-      </div>
+      <p class="lead">『はなさとみ』は、北茨城の畑で一本一本ていねいに育てた自然薯を、飲食店・小売店・ご家庭へお届けする農家ブランドです。2026年11月、はじめての出荷を予定しています。</p>
     </div>
-    <div class="hero-photo">
-      <div class="photo-frame photo-frame--wide">
-        <!-- 写真差し替え: 下の行を有効化して src を実ファイルへ（プレースホルダは自動で隠れます）
-        <img src="/assets/images/hero.jpg" alt="北茨城・華川町の自然薯畑"> -->
+    <div class="hero-renewal__actions">
+      <a href="/line/" class="btn btn--primary">LINEで最新情報を受け取る</a>
+      <a href="/wholesale/" class="btn btn--secondary">飲食店・小売店さまはこちら</a>
+    </div>
+    <div class="hero-renewal__image">
+      <div class="photo-frame">
+        <!-- 写真差し替え: 下の行を有効化（プレースホルダは自動で隠れます）
+        <img src="/assets/images/hero-jinenjo-main.png" alt="北茨城の畑で育てた自然薯"> -->
         <svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M100 175 C 100 120, 100 80, 100 30"/>
-          <path d="M100 120 C 70 110, 55 88, 60 60 C 90 66, 104 92, 100 120 Z"/>
-          <path d="M100 95 C 130 85, 148 62, 143 36 C 112 44, 96 68, 100 95 Z"/>
-          <path d="M100 150 C 78 142, 66 124, 70 104 C 94 110, 104 130, 100 150 Z"/>
+          <path d="M100 178 C 100 122, 100 80, 100 28"/>
+          <path d="M100 122 C 68 112, 52 88, 58 58 C 90 64, 106 92, 100 122 Z"/>
+          <path d="M100 96 C 132 86, 150 60, 144 32 C 112 40, 94 68, 100 96 Z"/>
+          <path d="M100 152 C 76 144, 64 124, 68 102 C 94 108, 106 132, 100 152 Z"/>
         </svg>
-        <span class="photo-frame__cap">北茨城・華川町の畑</span>
+        <span class="photo-frame__cap">自然薯（北茨城の畑にて）</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 2. LINE registration CTA -->
-<section class="section section--soft" style="padding:56px 0;">
-  <div class="container">
-    <div class="cta-block">
-      <svg class="leaf-deco leaf-deco--tr leaf-deco--pink" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M40 180 C 60 120, 90 90, 150 40"/>
-        <path d="M95 96 C 80 70, 90 55, 120 60 C 110 85, 100 95, 95 96 Z"/>
-        <path d="M120 70 C 130 45, 150 40, 168 52 C 150 78, 132 78, 120 70 Z"/>
-      </svg>
-      <span class="eyebrow">LINE OFFICIAL</span>
-      <h2>いちばん早いお知らせは、LINEで。</h2>
-      <p>出荷開始・一般販売のスタート・数量限定のご案内を、LINE公式アカウントから最初にお届けします。登録は無料、いつでも解除できます。</p>
-      <div class="hero-actions">
-        <a href="/line/" class="btn btn--primary">LINEで登録する</a>
+<!-- 2. LINE登録CTA -->
+<section class="section line-cta-band section--soft" style="padding:64px 0;">
+  <svg class="leaf-deco leaf-deco--tr leaf-deco--pink" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <path d="M40 180 C 60 120, 90 90, 150 40"/>
+    <path d="M95 96 C 80 70, 90 55, 120 60 C 110 85, 100 95, 95 96 Z"/>
+    <path d="M120 70 C 130 45, 150 40, 168 52 C 150 78, 132 78, 120 70 Z"/>
+  </svg>
+  <div class="container line-cta-band__grid">
+    <div class="line-cta-band__phone">
+      <div class="phone-mock">
+        <div class="phone-mock__screen">
+          <div class="brand">はなさとみ</div>
+          <svg class="phone-mock__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4" aria-hidden="true">
+            <path d="M100 170 C 100 120, 100 90, 100 44"/>
+            <path d="M100 120 C 72 112, 60 92, 64 68 C 92 74, 106 96, 100 120 Z"/>
+            <path d="M100 100 C 128 92, 142 70, 138 48 C 112 54, 96 74, 100 100 Z"/>
+          </svg>
+          <span class="phone-mock__pill">LINE公式アカウント</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="section-label">LINEでご案内</span>
+      <h2>出荷時期や販売開始、業務用のご相談は<br>LINEでご案内します。</h2>
+      <p class="sub">最新情報をいち早くお届けします。</p>
+      <div class="hero-actions" style="justify-content:flex-start;">
+        <a href="/line/" class="btn btn--primary">LINEで最新情報を受け取る</a>
       </div>
     </div>
   </div>
@@ -98,23 +107,23 @@
   <div class="container">
     <div class="split">
       <div class="split-text">
-        <span class="eyebrow">ABOUT HANASATOMI</span>
+        <span class="section-label">はなさとみとは</span>
         <h2>はなさとみとは</h2>
         <p>はなさとみは、茨城県北茨城市華川町小豆畑で自然薯を育てる農家ブランドです。</p>
         <p>自然の恵みを大切にしながら、飲食店の一皿にも、ご家庭の食卓にも、丁寧に育てた自然薯を届けていきます。</p>
         <div style="margin-top:24px;">
-          <a href="/about/" class="btn btn--secondary">はなさとみについて</a>
+          <a href="/about/" class="btn btn--secondary">詳しく見る</a>
         </div>
       </div>
       <div class="split-media">
-        <div class="photo-frame">
-          <!-- <img src="/assets/images/farmer.jpg" alt="自然薯を育てる生産者の手元"> -->
+        <div class="photo-frame photo-frame--wide">
+          <!-- <img src="/assets/images/farm-landscape.jpg" alt="北茨城・華川町の畑"> -->
           <svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M100 175 C 100 120, 100 80, 100 30"/>
-            <path d="M100 120 C 70 110, 55 88, 60 60 C 90 66, 104 92, 100 120 Z"/>
-            <path d="M100 95 C 130 85, 148 62, 143 36 C 112 44, 96 68, 100 95 Z"/>
+            <path d="M100 178 C 100 122, 100 80, 100 28"/>
+            <path d="M100 122 C 68 112, 52 88, 58 58 C 90 64, 106 92, 100 122 Z"/>
+            <path d="M100 96 C 132 86, 150 60, 144 32 C 112 40, 94 68, 100 96 Z"/>
           </svg>
-          <span class="photo-frame__cap">生産者の手元</span>
+          <span class="photo-frame__cap">北茨城・華川町の畑</span>
         </div>
       </div>
     </div>
@@ -122,25 +131,32 @@
 </section>
 
 <!-- 4. 自然薯について -->
-<section class="section section--green">
+<section class="section" id="jinenjo">
+  <svg class="leaf-deco leaf-deco--br" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <path d="M40 180 C 60 120, 90 90, 150 40"/>
+    <path d="M95 96 C 80 70, 90 55, 120 60 C 110 85, 100 95, 95 96 Z"/>
+    <path d="M120 70 C 130 45, 150 40, 168 52 C 150 78, 132 78, 120 70 Z"/>
+  </svg>
   <div class="container">
     <div class="split split--reverse">
       <div class="split-text">
-        <span class="eyebrow">ABOUT JINENJO</span>
+        <span class="section-label">自然薯について</span>
         <h2>自然薯について</h2>
         <p>自然薯は、日本原産の山芋の一種。粘りの強さ、香り、滋味深い味わいが特徴です。</p>
-        <p>とろろ、麦とろ、蕎麦、椀物、磯辺揚げ、鍋料理など、秋冬の料理に幅広く使われる、食卓を豊かにする食材です。</p>
+        <p>とろろ、麦とろ、蕎麦、椀物、磯辺揚げ、鍋料理など、秋冬の料理に幅広く使われます。</p>
+        <div style="margin-top:24px;">
+          <a href="/about/" class="btn btn--secondary">詳しく見る</a>
+        </div>
       </div>
       <div class="split-media">
         <div class="photo-frame">
-          <!-- <img src="/assets/images/jinenjo.jpg" alt="自然薯の実物"> -->
+          <!-- <img src="/assets/images/tororo.jpg" alt="自然薯のとろろ"> -->
           <svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M100 175 C 100 120, 100 80, 100 30"/>
-            <path d="M100 120 C 70 110, 55 88, 60 60 C 90 66, 104 92, 100 120 Z"/>
-            <path d="M100 95 C 130 85, 148 62, 143 36 C 112 44, 96 68, 100 95 Z"/>
-            <path d="M100 150 C 78 142, 66 124, 70 104 C 94 110, 104 130, 100 150 Z"/>
+            <path d="M100 178 C 100 122, 100 80, 100 28"/>
+            <path d="M100 122 C 68 112, 52 88, 58 58 C 90 64, 106 92, 100 122 Z"/>
+            <path d="M100 96 C 132 86, 150 60, 144 32 C 112 40, 94 68, 100 96 Z"/>
           </svg>
-          <span class="photo-frame__cap">自然薯の葉と畝</span>
+          <span class="photo-frame__cap">とろろ・自然薯の粘り</span>
         </div>
       </div>
     </div>
@@ -149,56 +165,68 @@
 
 <!-- 5. 飲食店・小売店さまへ -->
 <section class="section section--surface">
-  <div class="container">
-    <div class="split">
-      <div class="split-media">
-        <div class="photo-frame">
-          <!-- <img src="/assets/images/dish.jpg" alt="自然薯を使った料理の一皿"> -->
-          <svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M100 175 C 100 120, 100 80, 100 30"/>
-            <path d="M100 120 C 70 110, 55 88, 60 60 C 90 66, 104 92, 100 120 Z"/>
-            <path d="M100 95 C 130 85, 148 62, 143 36 C 112 44, 96 68, 100 95 Z"/>
-          </svg>
-          <span class="photo-frame__cap">料理の一皿（とろろ）</span>
-        </div>
+  <svg class="leaf-deco leaf-deco--tr" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <path d="M40 180 C 60 120, 90 90, 150 40"/>
+    <path d="M95 96 C 80 70, 90 55, 120 60 C 110 85, 100 95, 95 96 Z"/>
+    <path d="M120 70 C 130 45, 150 40, 168 52 C 150 78, 132 78, 120 70 Z"/>
+  </svg>
+  <div class="container container--narrow">
+    <div class="section-head">
+      <span class="section-label">飲食店・小売店さまへ</span>
+      <h2>飲食店・小売店さまへ</h2>
+      <p class="sub">2026年11月の出荷に向けて、業務用自然薯の先行案内を開始しています。<br>価格、ロット、規格、納期については、LINE公式アカウントより個別にご案内いたします。</p>
+    </div>
+    <div class="business-icons">
+      <div class="business-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 23h34c0 8.5-7.6 14-17 14S7 31.5 7 23Z"/><path d="M18 11c0 3-2 3.5-2 6M24 9c0 3-2 3.5-2 6M30 11c0 3-2 3.5-2 6"/></svg>
+        <span>和食店</span>
       </div>
-      <div class="split-text">
-        <span class="eyebrow">FOR RESTAURANTS &amp; SHOPS</span>
-        <h2>飲食店・小売店さまへ</h2>
-        <p>2026年11月の出荷に向けて、業務用自然薯の先行案内を開始しています。価格、ロット、規格、納期については、LINE公式アカウントより個別にご案内いたします。</p>
-        <p class="caption" style="margin-bottom:6px;">利用想定</p>
-        <div class="tag-list">
-          <span class="badge">和食店</span>
-          <span class="badge">蕎麦店</span>
-          <span class="badge">旅館・宿泊施設</span>
-          <span class="badge">小売店</span>
-          <span class="badge">ギフト販売</span>
-        </div>
-        <div class="hero-actions" style="justify-content:flex-start; margin-top:26px;">
-          <a href="/wholesale/" class="btn btn--dark">卸のご案内を見る</a>
-          <a href="/line/" class="btn btn--secondary">LINEで相談する</a>
-        </div>
+      <div class="business-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 25h34c0 8-7.6 13-17 13S7 33 7 25Z"/><path d="M13 25c2-9 6-13 6-13M21 25c1-10 3-14 3-14M29 25c1-9 4-13 5-14"/></svg>
+        <span>蕎麦店</span>
       </div>
+      <div class="business-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 20 24 9l16 11"/><path d="M11 20v18h26V20"/><path d="M20 38V27h8v11"/></svg>
+        <span>旅館・宿泊施設</span>
+      </div>
+      <div class="business-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15h30l-2 6H11z"/><path d="M11 21v17h26V21"/><path d="M20 38V28h8v10"/></svg>
+        <span>小売店</span>
+      </div>
+      <div class="business-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="21" width="28" height="16" rx="1.5"/><path d="M8 21h32v-4H8z"/><path d="M24 17v20"/><path d="M24 17c-4-6-11-4-8 0 2 3 8 0 8 0Zm0 0c4-6 11-4 8 0-2 3-8 0-8 0Z"/></svg>
+        <span>ギフト販売</span>
+      </div>
+    </div>
+    <div class="center">
+      <a href="/wholesale/" class="btn btn--dark">詳しく相談する</a>
     </div>
   </div>
 </section>
 
 <!-- 6. 一般販売について -->
-<section class="section section--soft">
-  <div class="container container--narrow">
-    <div class="section-head">
-      <span class="eyebrow">FOR EVERYONE</span>
-      <h2>一般販売について</h2>
-    </div>
-    <div class="notice stack">
-      <div>
-        <span class="badge badge--pink">一般販売のご案内</span>
-        <p style="margin-top:12px;">一般販売は<strong>2026年10月末よりオンラインにて開始予定</strong>です。ご家庭用、贈りもの用としてお選びいただけるよう準備を進めています。</p>
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="split-text">
+        <span class="section-label">一般販売について</span>
+        <h2>一般販売について</h2>
+        <p>一般販売は2026年10月末よりオンラインにて開始予定です。</p>
+        <p>ご家庭用、贈りもの用としてお選びいただけるよう準備を進めています。</p>
+        <div style="margin-top:24px;">
+          <a href="/coming-soon/" class="btn btn--primary">販売開始のお知らせを受け取る</a>
+        </div>
       </div>
-      <p class="sub">販売開始のお知らせや数量限定のご案内は、LINE公式アカウントから最初にお届けします。</p>
-      <div class="hero-actions" style="justify-content:flex-start;">
-        <a href="/coming-soon/" class="btn btn--secondary">一般販売について</a>
-        <a href="/line/" class="btn btn--primary">LINEで登録する</a>
+      <div class="split-media">
+        <div class="photo-frame photo-frame--wide">
+          <!-- <img src="/assets/images/gift.jpg" alt="贈答・梱包イメージ"> -->
+          <svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M100 178 C 100 122, 100 80, 100 28"/>
+            <path d="M100 122 C 68 112, 52 88, 58 58 C 90 64, 106 92, 100 122 Z"/>
+            <path d="M100 96 C 132 86, 150 60, 144 32 C 112 40, 94 68, 100 96 Z"/>
+          </svg>
+          <span class="photo-frame__cap">贈りもの・ご家庭用</span>
+        </div>
       </div>
     </div>
   </div>
@@ -208,52 +236,87 @@
 <section class="section section--surface">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">HOW TO ENJOY</span>
-      <h2>利用シーン</h2>
-      <p class="sub">とろろから鍋料理、贈りものまで。秋冬の食卓に幅広く。</p>
+      <span class="section-label">利用シーン</span>
+      <h2>いろいろな料理でお楽しみいただけます</h2>
     </div>
-    <div class="scene-grid">
-      <div class="scene-card"><div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 165 C 100 120, 100 90, 100 45"/><path d="M100 120 C 74 112, 62 92, 66 68 C 92 74, 104 96, 100 120 Z"/></svg></div><div class="scene-label">とろろ</div></div>
-      <div class="scene-card"><div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 165 C 100 120, 100 90, 100 45"/><path d="M100 120 C 74 112, 62 92, 66 68 C 92 74, 104 96, 100 120 Z"/></svg></div><div class="scene-label">麦とろ</div></div>
-      <div class="scene-card"><div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 165 C 100 120, 100 90, 100 45"/><path d="M100 120 C 74 112, 62 92, 66 68 C 92 74, 104 96, 100 120 Z"/></svg></div><div class="scene-label">蕎麦</div></div>
-      <div class="scene-card"><div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 165 C 100 120, 100 90, 100 45"/><path d="M100 120 C 74 112, 62 92, 66 68 C 92 74, 104 96, 100 120 Z"/></svg></div><div class="scene-label">磯辺揚げ</div></div>
-      <div class="scene-card"><div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 165 C 100 120, 100 90, 100 45"/><path d="M100 120 C 74 112, 62 92, 66 68 C 92 74, 104 96, 100 120 Z"/></svg></div><div class="scene-label">椀物</div></div>
-      <div class="scene-card"><div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 165 C 100 120, 100 90, 100 45"/><path d="M100 120 C 74 112, 62 92, 66 68 C 92 74, 104 96, 100 120 Z"/></svg></div><div class="scene-label">鍋料理</div></div>
-      <div class="scene-card"><div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 165 C 100 120, 100 90, 100 45"/><path d="M100 120 C 74 112, 62 92, 66 68 C 92 74, 104 96, 100 120 Z"/></svg></div><div class="scene-label">贈答品</div></div>
+    <div class="usage-grid">
+      <div class="usage-card">
+        <div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 160 C 100 118, 100 92, 100 50"/><path d="M100 118 C 76 110, 64 92, 68 70 C 92 76, 104 96, 100 118 Z"/></svg></div>
+        <div class="usage-card__name">とろろ</div>
+      </div>
+      <div class="usage-card">
+        <div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 160 C 100 118, 100 92, 100 50"/><path d="M100 118 C 76 110, 64 92, 68 70 C 92 76, 104 96, 100 118 Z"/></svg></div>
+        <div class="usage-card__name">麦とろ</div>
+      </div>
+      <div class="usage-card">
+        <div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 160 C 100 118, 100 92, 100 50"/><path d="M100 118 C 76 110, 64 92, 68 70 C 92 76, 104 96, 100 118 Z"/></svg></div>
+        <div class="usage-card__name">蕎麦</div>
+      </div>
+      <div class="usage-card">
+        <div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 160 C 100 118, 100 92, 100 50"/><path d="M100 118 C 76 110, 64 92, 68 70 C 92 76, 104 96, 100 118 Z"/></svg></div>
+        <div class="usage-card__name">磯辺揚げ</div>
+      </div>
+      <div class="usage-card">
+        <div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 160 C 100 118, 100 92, 100 50"/><path d="M100 118 C 76 110, 64 92, 68 70 C 92 76, 104 96, 100 118 Z"/></svg></div>
+        <div class="usage-card__name">椀物</div>
+      </div>
+      <div class="usage-card">
+        <div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 160 C 100 118, 100 92, 100 50"/><path d="M100 118 C 76 110, 64 92, 68 70 C 92 76, 104 96, 100 118 Z"/></svg></div>
+        <div class="usage-card__name">鍋料理</div>
+      </div>
+      <div class="usage-card">
+        <div class="photo-frame photo-frame--square"><svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M100 160 C 100 118, 100 92, 100 50"/><path d="M100 118 C 76 110, 64 92, 68 70 C 92 76, 104 96, 100 118 Z"/></svg></div>
+        <div class="usage-card__name">贈答品</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- 8. 会社概要 -->
-<section class="section section--soft">
-  <div class="container container--narrow">
+<section class="section" id="company">
+  <div class="container">
     <div class="section-head">
-      <span class="eyebrow">COMPANY</span>
+      <span class="section-label">会社概要</span>
       <h2>会社概要</h2>
     </div>
-    <div class="card info-card">
-      <hr class="gold-rule">
-      <table class="info-table">
-        <tbody>
-          <tr><th>会社名</th><td class="formal-name">株式会社はなさとみ</td></tr>
-          <tr><th>代表取締役</th><td>田口 実佳</td></tr>
-          <tr><th>取締役</th><td>田口 勉</td></tr>
-          <tr><th>設立日</th><td>令和8年6月29日</td></tr>
-          <tr><th>資本金</th><td>300万円</td></tr>
-          <tr><th>所在地</th><td>〒319-1538 茨城県北茨城市華川町小豆畑403</td></tr>
-          <tr><th>メールアドレス</th><td><a href="mailto:info@hanasatomi.com">info@hanasatomi.com</a></td></tr>
-          <tr><th>事業内容</th><td>自然薯の栽培・販売、農産物の企画・販売</td></tr>
-        </tbody>
-      </table>
+    <div class="split">
+      <div class="split-text">
+        <div class="card info-card">
+          <hr class="gold-rule">
+          <table class="info-table">
+            <tbody>
+              <tr><th>会社名</th><td class="formal-name">株式会社はなさとみ</td></tr>
+              <tr><th>代表取締役</th><td>田口 実佳</td></tr>
+              <tr><th>取締役</th><td>田口 勉</td></tr>
+              <tr><th>設立日</th><td>令和8年6月29日</td></tr>
+              <tr><th>資本金</th><td>300万円</td></tr>
+              <tr><th>所在地</th><td>〒319-1538 茨城県北茨城市華川町小豆畑403</td></tr>
+              <tr><th>メールアドレス</th><td><a href="mailto:info@hanasatomi.com">info@hanasatomi.com</a></td></tr>
+              <tr><th>事業内容</th><td>自然薯の栽培・販売、農産物の企画・販売</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="split-media">
+        <div class="photo-frame photo-frame--tall">
+          <!-- <img src="/assets/images/field-sunset.jpg" alt="北茨城の畑（夕景）"> -->
+          <svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M100 178 C 100 122, 100 80, 100 28"/>
+            <path d="M100 122 C 68 112, 52 88, 58 58 C 90 64, 106 92, 100 122 Z"/>
+            <path d="M100 96 C 132 86, 150 60, 144 32 C 112 40, 94 68, 100 96 Z"/>
+          </svg>
+          <span class="photo-frame__cap">北茨城の畑</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 9. よくあるご質問 -->
+<!-- 9. よくある質問 -->
 <section class="section section--surface">
   <div class="container container--narrow">
     <div class="section-head">
-      <span class="eyebrow">FAQ</span>
+      <span class="section-label">よくある質問</span>
       <h2>よくあるご質問</h2>
     </div>
     <div class="faq">
@@ -277,20 +340,29 @@
   </div>
 </section>
 
-<!-- 10. Final CTA -->
-<section class="section section--surface" style="padding-top:0;">
+<!-- 10. 最終CTA -->
+<section class="section section--surface">
   <div class="container">
-    <div class="cta-block">
-      <svg class="leaf-deco leaf-deco--tr leaf-deco--pink" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M40 180 C 60 120, 90 90, 150 40"/>
-        <path d="M95 96 C 80 70, 90 55, 120 60 C 110 85, 100 95, 95 96 Z"/>
-        <path d="M120 70 C 130 45, 150 40, 168 52 C 150 78, 132 78, 120 70 Z"/>
-      </svg>
-      <span class="eyebrow">LINE OFFICIAL</span>
-      <h2>はなさとみの季節を、LINEで。</h2>
-      <p>出荷開始・一般販売のスタート・飲食店さま向けの先行案内を、LINE公式アカウントからお届けします。</p>
-      <div class="hero-actions">
-        <a href="/line/" class="btn btn--primary">LINE公式アカウントを登録する</a>
+    <div class="final-cta">
+      <div class="final-cta__grid">
+        <div class="final-cta__head">
+          <span class="section-label">LINEでご案内</span>
+          <h2>出荷のお知らせ、販売開始、業務用のご相談は<br>LINEでご案内します。</h2>
+        </div>
+        <div class="final-cta__actions">
+          <a href="/line/" class="btn btn--primary">LINE公式アカウントに登録する</a>
+        </div>
+        <div class="final-cta__image">
+          <div class="photo-frame">
+            <!-- <img src="/assets/images/jinenjo-basket.jpg" alt="収穫した自然薯"> -->
+            <svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M100 178 C 100 122, 100 80, 100 28"/>
+              <path d="M100 122 C 68 112, 52 88, 58 58 C 90 64, 106 92, 100 122 Z"/>
+              <path d="M100 96 C 132 86, 150 60, 144 32 C 112 40, 94 68, 100 96 Z"/>
+            </svg>
+            <span class="photo-frame__cap">自然薯</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -303,20 +375,28 @@
       <div class="footer-about">
         <div class="brand">はなさとみ<small>HANASATOMI</small></div>
         <p>茨城県北茨城市華川町小豆畑で自然薯を育てる農家ブランド。丁寧に育てた自然薯を、飲食店・小売店・ご家庭へやさしくお届けします。</p>
+        <div class="footer-social">
+          <a href="/line/" aria-label="LINE公式アカウント"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.63 2 11.09c0 3.98 3.55 7.31 8.35 7.94.32.07.77.21.88.49.1.25.06.64.03.9l-.14.85c-.04.25-.2.98.86.53 1.06-.44 5.7-3.36 7.78-5.75C21.06 14.4 22 12.86 22 11.09 22 6.63 17.52 3 12 3ZM8.1 13.2H6.03c-.3 0-.54-.24-.54-.54V9.36c0-.3.24-.54.54-.54.3 0 .54.24.54.54v2.76H8.1c.3 0 .54.24.54.54s-.24.54-.54.54Zm2.06-.54c0 .3-.24.54-.54.54s-.54-.24-.54-.54V9.36c0-.3.24-.54.54-.54s.54.24.54.54v3.3Zm4.05 0c0 .23-.15.44-.37.51-.06.02-.11.03-.17.03-.17 0-.33-.08-.43-.22l-2.12-2.88v2.56c0 .3-.24.54-.54.54s-.54-.24-.54-.54V9.36c0-.23.15-.44.37-.51.05-.02.11-.03.17-.03.17 0 .33.08.43.22l2.12 2.88V9.36c0-.3.24-.54.54-.54s.54.24.54.54v3.3Zm3.4-2.19c.3 0 .54.24.54.54s-.24.54-.54.54h-1.53v.57h1.53c.3 0 .54.24.54.54s-.24.54-.54.54h-2.07c-.3 0-.54-.24-.54-.54V9.36c0-.3.24-.54.54-.54h2.07c.3 0 .54.24.54.54s-.24.54-.54.54h-1.53v.57h1.53Z"/></svg></a>
+          <!-- Instagram: 公式アカウント開設後に href を実URLへ差し替え -->
+          <a href="#" aria-label="Instagram（準備中）"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
       </div>
       <div class="footer-nav">
         <div>
           <h4>サイト</h4>
           <ul>
+            <li><a href="/">トップ</a></li>
             <li><a href="/about/">はなさとみについて</a></li>
+            <li><a href="#jinenjo">自然薯について</a></li>
             <li><a href="/wholesale/">飲食店・小売店の方へ</a></li>
             <li><a href="/coming-soon/">一般販売について</a></li>
-            <li><a href="/line/">LINE登録</a></li>
+            <li><a href="#company">会社概要</a></li>
           </ul>
         </div>
         <div>
           <h4>その他</h4>
           <ul>
+            <li><a href="/line/">LINE登録</a></li>
             <li><a href="/contact/">お問い合わせ</a></li>
             <li><a href="/privacy/">プライバシーポリシー</a></li>
           </ul>

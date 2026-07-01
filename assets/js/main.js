@@ -23,14 +23,18 @@ var LINE_URL = "https://lin.ee/U0a5Cxd";
   // スクロール判定方式（getBoundingClientRect）で、読み込み時・スクロール時・リサイズ時に評価する。
   var mobileCta = document.querySelector('.mobile-cta');
   if (mobileCta) {
-    var watched = document.querySelectorAll('.hero, .cta-block, .site-footer');
+    var watched = document.querySelectorAll('.hero, .hero-renewal, .line-cta-band, .cta-block, .final-cta, .site-footer');
     var ticking = false;
     function updateMobileCta() {
       ticking = false;
+      var vh = window.innerHeight;
       var anyVisible = false;
       for (var j = 0; j < watched.length; j++) {
         var r = watched[j].getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) { anyVisible = true; break; }
+        // 画面高の40%以上を占めるほど「実質的に表示中」のときだけ引っ込める
+        // （端が1pxかかった程度では退避せず、中間コンテンツでは固定CTAを出し続ける）
+        var visible = Math.min(vh, r.bottom) - Math.max(0, r.top);
+        if (visible > vh * 0.4) { anyVisible = true; break; }
       }
       mobileCta.classList.toggle('is-hidden', anyVisible);
     }
