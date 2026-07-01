@@ -1,0 +1,59 @@
+name: Deploy to Xserver
+
+# main への push で本番（Xserver public_html）へ自動デプロイ。
+# 手動実行も可能（Actions タブ → Run workflow）。
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+# 同時実行を防ぐ（前のデプロイが走っていたら中断して最新だけ反映）
+concurrency:
+  group: deploy-xserver-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to Xserver (FTPS)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          # 接続情報は必ず GitHub Secrets から。リポジトリに直書きしないこと。
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps          # 暗号化FTP（explicit FTPS / ポート21）
+          port: 21
+
+          # アップロード元（リポジトリ直下）と、Xserverの公開ディレクトリ
+          local-dir: ./
+          # ↓ FTPログイン直下からのパス。末尾スラッシュ必須。
+          #   Xserverの主FTPアカウントはホーム直下に hanasatomi.com/ がある想定。
+          #   実際のパスは FileZilla 等で1度接続して確認し、必要なら調整すること。
+          server-dir: ./hanasatomi.com/public_html/
+
+          # リポジトリから消したファイルは次回デプロイで自動削除される（状態ファイルで差分同期）。
+          # ※ .htaccess / .user.ini など「このActionが上げていない」既存ファイルは削除されない（安全）。
+
+          # 公開サイトに不要なものは上げない（内容は .deployignore と同期すること）
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
+            .claude/**
+            tasks/**
+            backup/**
+            **/*.zip
+            .gitignore
+            .deployignore
+            CLAUDE.md
+            DESIGN.md
+            README.md
+            assets/images/ogp.svg
+            assets/images/icon-master.svg
+            **/.DS_Store

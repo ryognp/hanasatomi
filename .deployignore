@@ -1,0 +1,27 @@
+# デプロイ除外リスト（人間向けドキュメント）
+#
+# ※ 実際の除外は .github/workflows/deploy.yml の `exclude:` で適用されます。
+#   FTP-Deploy-Action はこのファイルを直接読まないため、
+#   このファイルを変更したら deploy.yml の exclude も必ず同期してください。
+#
+# 公開サイト（hanasatomi.com/public_html/）に上げないもの：
+
+.git/
+.github/
+.claude/
+tasks/
+backup/
+node_modules/
+*.zip
+
+.gitignore
+.deployignore
+CLAUDE.md
+DESIGN.md
+README.md
+
+# 公開ページから参照されない画像の元データ（PNG生成用）
+assets/images/ogp.svg
+assets/images/icon-master.svg
+
+.DS_Store
