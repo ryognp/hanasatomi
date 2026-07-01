@@ -64,6 +64,7 @@ jobs:
             CLAUDE.md
             DESIGN.md
             README.md
+            **/todo.md
             .htaccess
             .user.ini
             .well-known/**

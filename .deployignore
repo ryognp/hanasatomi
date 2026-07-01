@@ -29,6 +29,8 @@ node_modules/
 CLAUDE.md
 DESIGN.md
 README.md
+todo.md
+**/todo.md
 
 # Xserver側の既存ファイルは触らない（アップロード・削除の対象外）
 .htaccess
