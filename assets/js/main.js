@@ -19,19 +19,27 @@ var LINE_URL = "https://lin.ee/U0a5Cxd";
     links[i].setAttribute('rel', 'noopener');
   }
 
-  // 固定CTAの出し分け：ページ内CTAブロック／フッターが見えている間は引っ込める（二重表示回避）
+  // 固定CTAの出し分け：ヒーロー／ページ内CTAブロック／フッターが見えている間は引っ込める（二重表示回避）
+  // スクロール判定方式（getBoundingClientRect）で、読み込み時・スクロール時・リサイズ時に評価する。
   var mobileCta = document.querySelector('.mobile-cta');
-  if (mobileCta && 'IntersectionObserver' in window) {
-    var watched = document.querySelectorAll('.cta-block, .site-footer');
-    var visible = new Set();
-    var io = new IntersectionObserver(function (entries) {
-      for (var j = 0; j < entries.length; j++) {
-        if (entries[j].isIntersecting) visible.add(entries[j].target);
-        else visible.delete(entries[j].target);
+  if (mobileCta) {
+    var watched = document.querySelectorAll('.hero, .cta-block, .site-footer');
+    var ticking = false;
+    function updateMobileCta() {
+      ticking = false;
+      var anyVisible = false;
+      for (var j = 0; j < watched.length; j++) {
+        var r = watched[j].getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) { anyVisible = true; break; }
       }
-      mobileCta.classList.toggle('is-hidden', visible.size > 0);
-    }, { threshold: 0.15 });
-    for (var k = 0; k < watched.length; k++) io.observe(watched[k]);
+      mobileCta.classList.toggle('is-hidden', anyVisible);
+    }
+    function onScrollCta() {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(updateMobileCta); }
+    }
+    window.addEventListener('scroll', onScrollCta, { passive: true });
+    window.addEventListener('resize', onScrollCta, { passive: true });
+    updateMobileCta(); // 初期評価（読み込み直後）
   }
 
   // ハンバーガーメニュー
