@@ -22,3 +22,6 @@ tasks/
 
 # 配布用ZIP
 *.zip
+
+# ZIP展開の作業フォルダ
+hanasatomi_public_*/
