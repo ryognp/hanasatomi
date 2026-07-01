@@ -32,14 +32,18 @@ jobs:
           # アップロード元（リポジトリ直下）と、Xserverの公開ディレクトリ
           local-dir: ./
           # ↓ FTPログイン直下からのパス。末尾スラッシュ必須。
-          #   Xserverの主FTPアカウントはホーム直下に hanasatomi.com/ がある想定。
-          #   実際のパスは FileZilla 等で1度接続して確認し、必要なら調整すること。
+          #   Xserverの主FTPアカウントは「ログイン直下 → hanasatomi.com/ → public_html/」構造
+          #   （ファイルマネージャのツリーと同じ）。実パスは FileZilla で1度確認し、
+          #   もしログイン直後がすでにドメイン配下なら ./public_html/ に変更すること。
           server-dir: ./hanasatomi.com/public_html/
 
-          # リポジトリから消したファイルは次回デプロイで自動削除される（状態ファイルで差分同期）。
-          # ※ .htaccess / .user.ini など「このActionが上げていない」既存ファイルは削除されない（安全）。
+          # ▼ 削除の扱い（重要）
+          #   dangerous-clean-slate は使わない。差分同期の状態ファイルで、
+          #   「このActionが過去に上げたファイル」だけを対象に、消えたものを削除する。
+          #   → Xserverの .htaccess / .user.ini / .well-known/（SSL認証等）は
+          #     Actionが上げていないので削除されない。さらに exclude にも明記して二重に保護する。
 
-          # 公開サイトに不要なものは上げない（内容は .deployignore と同期すること）
+          # 公開サイトに不要なもの・機密は上げない（内容は .deployignore と同期すること）
           exclude: |
             **/.git*
             **/.git*/**
@@ -48,12 +52,20 @@ jobs:
             .claude/**
             tasks/**
             backup/**
+            メモ/**
             **/*.zip
+            **/*.xlsx
+            **/*.docx
+            **/*.pdf
+            **/._*
+            **/.DS_Store
             .gitignore
             .deployignore
             CLAUDE.md
             DESIGN.md
             README.md
+            .htaccess
+            .user.ini
+            .well-known/**
             assets/images/ogp.svg
             assets/images/icon-master.svg
-            **/.DS_Store

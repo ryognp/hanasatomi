@@ -12,7 +12,17 @@
 tasks/
 backup/
 node_modules/
+
+# 内部資料・調査資料・名刺画像など（絶対に公開しない）
+メモ/
 *.zip
+*.xlsx
+*.docx
+*.pdf
+
+# macOS ゴミファイル
+.DS_Store
+._*
 
 .gitignore
 .deployignore
@@ -20,8 +30,11 @@ CLAUDE.md
 DESIGN.md
 README.md
 
+# Xserver側の既存ファイルは触らない（アップロード・削除の対象外）
+.htaccess
+.user.ini
+.well-known/
+
 # 公開ページから参照されない画像の元データ（PNG生成用）
 assets/images/ogp.svg
 assets/images/icon-master.svg
-
-.DS_Store
