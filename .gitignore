@@ -25,3 +25,6 @@ tasks/
 
 # ZIP展開の作業フォルダ
 hanasatomi_public_*/
+
+# モック原本（公開・コミット禁止）
+モック/

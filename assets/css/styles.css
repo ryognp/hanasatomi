@@ -255,12 +255,17 @@ p:last-child { margin-bottom: 0; }
   justify-content: space-between;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-heading);
   font-size: 22px;
   font-weight: 500;
   letter-spacing: 0.14em;
   color: var(--text-main);
 }
+.brand__mark { width: 42px; height: auto; flex: 0 0 auto; }
+.brand__text { display: block; }
 .brand small {
   display: block;
   font-family: var(--font-body);
@@ -269,10 +274,11 @@ p:last-child { margin-bottom: 0; }
   color: var(--text-sub);
   margin-top: 2px;
 }
-.nav { display: flex; align-items: center; gap: 28px; }
+.nav { display: flex; align-items: center; gap: 20px; }
 .nav a {
   font-size: 14px;
   color: var(--text-main);
+  white-space: nowrap;
   transition: color 0.2s ease;
 }
 .nav a:hover { color: var(--primary-deep); }
@@ -362,12 +368,11 @@ p:last-child { margin-bottom: 0; }
 .step h3 { font-size: 18px; margin-bottom: 4px; }
 
 /* ---------- FAQ ---------- */
+/* PC: 控えめな罫線リスト（SPではカードに切替） */
+.faq { border-top: 1px solid var(--border-soft); }
 .faq details {
-  background: var(--surface);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-card);
-  padding: 20px 24px;
-  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-soft);
+  padding: 18px 8px;
 }
 .faq summary {
   cursor: pointer;
@@ -393,50 +398,39 @@ p:last-child { margin-bottom: 0; }
 }
 .notice .badge { margin-bottom: 10px; }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer（スリム型：PC=1行水平 / SP=中央寄せ縦） ---------- */
 .site-footer {
   background: var(--secondary-hover);
   border-top: 1px solid var(--border-faint);
-  padding: 64px 0 40px;
+  padding: 30px 0;
 }
-.site-footer .footer-grid {
+.footer-slim {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 20px 28px;
+  flex-wrap: wrap;
+  max-width: var(--wide-width);  /* 1行に収めるためワイド幅 */
 }
-.site-footer .brand { margin-bottom: 12px; position: relative; }
-/* 名刺のロゴ下の金罫を踏襲した、ごく小さな金アクセント（フッターのみ） */
-.site-footer .brand::after {
-  content: "";
-  display: block;
-  width: 40px; height: 2px;
-  margin-top: 10px;
-  background: var(--formal-gold);
-  opacity: 0.7;
+.footer-links { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: var(--text-main); white-space: nowrap; }
+.footer-links a:hover { color: var(--primary-deep); }
+.footer-copy { font-size: 12px; color: var(--text-sub); letter-spacing: 0.06em; }
+.footer-social { display: none; gap: 16px; }
+.footer-social a {
+  width: 42px; height: 42px;
+  border-radius: var(--radius-pill);
+  display: grid; place-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  color: var(--text-main);
+  transition: all .2s ease;
 }
+.footer-social a:hover { background: var(--primary-soft); }
+.footer-social svg { width: 20px; height: 20px; }
 /* 会社情報の小さなアクセント（金の細罫・濃紺の社名）。メイン/CTAには使わない。 */
 .gold-rule { width: 44px; height: 2px; background: var(--formal-gold); opacity: 0.75; border: 0; margin: 0 0 20px; }
 .formal-name { color: var(--formal-navy); font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.04em; }
-.footer-about { max-width: 340px; }
-.footer-about p { font-size: 14px; color: var(--text-sub); }
-.footer-nav { display: flex; gap: 56px; flex-wrap: wrap; }
-.footer-nav h4 { font-family: var(--font-body); font-size: 13px; letter-spacing: 0.1em; color: var(--text-sub); margin-bottom: 14px; font-weight: 600; }
-.footer-nav ul { list-style: none; }
-.footer-nav li { margin-bottom: 10px; }
-.footer-nav a { font-size: 14px; color: var(--text-main); }
-.footer-nav a:hover { color: var(--primary-deep); }
-.footer-bottom {
-  border-top: 1px solid var(--border-faint);
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 12px;
-  color: var(--text-sub);
-}
 
 /* ---------- Mobile fixed CTA ---------- */
 .mobile-cta {
@@ -532,8 +526,12 @@ p:last-child { margin-bottom: 0; }
   .cta-block { padding: 28px 22px; }
   .section .cta-block .hero-actions .btn { width: 100%; }
 
-  .footer-grid { flex-direction: column; gap: 28px; }
-  .footer-nav { gap: 32px; }
+  /* Footer: 中央寄せ縦（ロゴ→縦ナビ→SNS→©） */
+  .site-footer { padding: 44px 0 36px; }
+  .footer-slim { flex-direction: column; align-items: center; gap: 24px; text-align: center; }
+  .footer-links { flex-direction: column; gap: 0; }
+  .footer-links a { display: block; padding: 11px 8px; font-size: 15px; }
+  .footer-social { display: flex; }
 
   /* Fixed CTA visible on mobile; add page bottom spacing（ノッチ端末のsafe-areaも考慮） */
   .mobile-cta { display: block; }
@@ -613,35 +611,34 @@ p:last-child { margin-bottom: 0; }
   height: 100%; min-height: 540px; aspect-ratio: auto;
   border: none; border-radius: 0; box-shadow: none;
 }
-.hero-renewal .eyebrow { display: block; margin-bottom: 14px; color: var(--text-main); }
+.hero-renewal .eyebrow {
+  display: flex; align-items: center; gap: 18px;
+  margin-bottom: 14px; color: var(--text-main);
+}
+/* eyebrowの後ろに伸びる短い罫（モック準拠の装飾） */
+.hero-renewal .eyebrow::after {
+  content: ""; flex: 1; max-width: 150px; height: 1px;
+  background: var(--border-soft);
+}
+/* CTAボタン内のLINE吹き出しアイコン */
+.btn__icon { width: 18px; height: 18px; flex: 0 0 auto; }
 .hero-renewal h1 { margin-bottom: 18px; }
 .hero-renewal .lead { max-width: 30em; }
 
-/* ---------- LINE CTA 帯 ---------- */
+/* ---------- LINE CTA 帯（PC: 写真左/テキスト右。SP: 見出し→写真→CTA） ---------- */
 .line-cta-band__grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 48px; align-items: center;
+  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-areas: "media head" "media cta";
+  column-gap: 56px; row-gap: 10px;
+  align-items: center;
 }
+.line-cta-band__head { grid-area: head; align-self: end; }
+.line-cta-band__cta { grid-area: cta; align-self: start; display: flex; }
+.line-cta-band__media { grid-area: media; }
+.line-cta-band__media .photo-frame { aspect-ratio: 5 / 4; max-width: 430px; margin: 0 auto; }
 .line-cta-band h2 { margin-bottom: 14px; }
-.line-cta-band p { margin-bottom: 24px; }
-
-/* CSSスマホモック（画像なしでも上品に） */
-.phone-mock {
-  width: 210px; margin: 0 auto; aspect-ratio: 9 / 18;
-  background: var(--text-main);
-  border-radius: 32px; padding: 10px;
-  box-shadow: var(--shadow-float);
-}
-.phone-mock__screen {
-  position: relative; width: 100%; height: 100%;
-  border-radius: 24px; overflow: hidden;
-  background: linear-gradient(160deg, var(--primary-soft) 0%, var(--accent-green-soft) 100%);
-  display: grid; place-items: center; gap: 12px; text-align: center;
-}
-.phone-mock__screen .brand { font-size: 18px; }
-.phone-mock__leaf { width: 84px; color: #fff; opacity: 0.6; }
-.phone-mock__pill { font-size: 11px; color: var(--text-main); background: rgba(255,255,255,0.7); padding: 4px 12px; border-radius: var(--radius-pill); }
+.line-cta-band p { margin-bottom: 8px; }
 
 /* ---------- Split（写真＋テキストの2カラム。about でも使用） ---------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
@@ -650,12 +647,28 @@ p:last-child { margin-bottom: 0; }
 .split .split-text h2 { margin-bottom: 16px; }
 .split--reverse .split-media { order: -1; }
 
+/* ---------- Split Story（見出し/写真/本文の3パーツ。SPは 見出し→写真→本文） ---------- */
+.split-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "head media" "body media";
+  column-gap: 56px;
+  align-items: center;
+}
+.split-story--reverse { grid-template-areas: "media head" "media body"; }
+.split-story__head { grid-area: head; align-self: end; margin-bottom: 14px; }
+.split-story__head h2 { margin: 0; }
+.split-story__media { grid-area: media; }
+.split-story__body { grid-area: body; align-self: start; }
+.split-story__body .btn { margin-top: 14px; }
+
 /* ---------- 利用想定タグ ---------- */
 .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 
-/* ---------- 業務用アイコン（線画） ---------- */
-.business-icons { display: flex; justify-content: center; gap: 44px; flex-wrap: wrap; margin: 4px 0 32px; }
-.business-icon { width: 120px; text-align: center; }
+/* ---------- 業務用アイコン（線画・PCはアイコン間に薄い縦罫） ---------- */
+.business-icons { display: flex; justify-content: center; flex-wrap: wrap; margin: 4px 0 32px; }
+.business-icon { width: 158px; text-align: center; padding: 8px 0; }
+.business-icon + .business-icon { border-left: 1px solid var(--border-soft); }
 .business-icon svg { width: 46px; height: 46px; color: var(--text-main); margin-bottom: 10px; }
 .business-icon span { display: block; font-family: var(--font-heading); font-size: 15px; color: var(--text-main); }
 
@@ -682,40 +695,77 @@ p:last-child { margin-bottom: 0; }
 .final-cta__image .photo-frame { height: 100%; min-height: 240px; aspect-ratio: auto; border: none; border-radius: 0; box-shadow: none; }
 .final-cta .section-label, .final-cta h2 { }
 
-/* ---------- Footer ソーシャル ---------- */
-.footer-social { display: flex; gap: 12px; margin-top: 18px; }
-.footer-social a { width: 40px; height: 40px; border-radius: var(--radius-pill); display: grid; place-items: center; background: var(--surface); border: 1px solid var(--border-soft); color: var(--text-main); transition: all .2s ease; }
-.footer-social a:hover { background: var(--secondary-hover); }
-.footer-social svg { width: 20px; height: 20px; }
+/* ---------- 会社概要（フラット表・カードなし） ---------- */
+.company-flat .gold-rule { margin-bottom: 4px; }
+.company-flat .info-table th { width: 32%; }
+
+/* ---------- スクリーンリーダー専用 ---------- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
 
 /* =========================================================
    Responsive（リニューアル）
    ========================================================= */
 @media (max-width: 1023px) {
   .usage-grid { grid-template-columns: repeat(4, 1fr); }
-  .line-cta-band__grid { gap: 32px; }
+  .line-cta-band__grid { column-gap: 32px; }
+  .split-story { column-gap: 32px; }
 }
 @media (max-width: 767px) {
-  /* Hero: コピー → 写真 → CTA の縦積み */
+  .brand__mark { width: 36px; }
+
+  /* Hero: コピー → 写真 → CTA の縦積み（写真は縦長・全幅） */
   .hero-renewal__grid { grid-template-columns: 1fr; grid-template-areas: "content" "image" "actions"; }
   .hero-renewal__content { align-self: auto; padding: 40px var(--pad-x) 20px; }
   .hero-renewal__actions { align-self: auto; padding: 20px var(--pad-x) 40px; flex-direction: column; }
   .hero-renewal__actions .btn { width: 100%; }
-  .hero-renewal__image .photo-frame { min-height: 0; aspect-ratio: 3 / 2; }
+  .hero-renewal__image .photo-frame { min-height: 0; aspect-ratio: 4 / 5; }
 
-  .line-cta-band__grid { grid-template-columns: 1fr; gap: 24px; text-align: center; }
-  .line-cta-band .hero-actions { justify-content: center; }
+  /* LINE帯: 見出し → 写真 → CTA */
+  .line-cta-band__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "head" "media" "cta";
+    row-gap: 22px; text-align: center;
+  }
+  .line-cta-band__cta { justify-content: center; }
+  .line-cta-band__cta .btn { width: 100%; }
 
   .split { grid-template-columns: 1fr; gap: 24px; }
   .split--reverse .split-media { order: 0; }  /* SPは常に テキスト→写真 */
 
-  .business-icons { gap: 20px 12px; }
-  .business-icon { width: 92px; }
+  /* Split Story: 見出し → 写真 → 本文（見出しは中央＋短い下罫） */
+  .split-story { grid-template-columns: 1fr; grid-template-areas: "head" "media" "body"; }
+  .split-story__head { align-self: auto; text-align: center; margin-bottom: 18px; }
+  .split-story__head h2::after {
+    content: ""; display: block;
+    width: 40px; height: 1px;
+    background: var(--border-soft);
+    margin: 14px auto 0;
+  }
+  .split-story__body { margin-top: 20px; text-align: left; }
+  .split-story__body .btn { width: 100%; }
+
+  .business-icons { gap: 18px 6px; }
+  .business-icon { width: 100px; padding: 4px 0; }
+  .business-icon + .business-icon { border-left: none; }
   .business-icon svg { width: 40px; height: 40px; }
 
   .info-card { padding: 22px; }
   .info-table th { width: 40%; font-size: 13px; }
   .info-table td { font-size: 14px; }
+
+  /* FAQ: SPはカード型に切替 */
+  .faq { border-top: none; }
+  .faq details {
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-card);
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
 
   /* 利用シーン: 縦リストカード（写真左・料理名右） */
   .usage-grid { grid-template-columns: 1fr; gap: 12px; }

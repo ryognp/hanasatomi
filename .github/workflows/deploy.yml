@@ -53,6 +53,7 @@ jobs:
             tasks/**
             backup/**
             メモ/**
+            モック/**
             **/*.zip
             **/*.xlsx
             **/*.docx
