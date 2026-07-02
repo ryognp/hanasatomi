@@ -278,6 +278,24 @@ p:last-child { margin-bottom: 0; }
   color: var(--text-sub);
   margin-top: 2px;
 }
+/* ヘッダーのロゴは3段テキスト。フッターの .brand に影響させないため .site-header に限定し、
+   行間を詰めて header 80px / SP 72px の高さを増やさない */
+.site-header .brand {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  line-height: 1.1;
+}
+.site-header .brand__tagline {
+  font-size: 11px; line-height: 1.1; letter-spacing: 0.12em; color: var(--text-sub);
+}
+.site-header .brand__name {
+  font-size: 22px; line-height: 1.05; letter-spacing: 0.12em; color: var(--text-main);
+}
+.site-header .brand__roman {
+  font-family: var(--font-body);
+  font-size: 10px; line-height: 1.1; letter-spacing: 0.16em; text-transform: lowercase; color: var(--text-sub);
+}
 .nav { display: flex; align-items: center; gap: 28px; white-space: nowrap; }
 .nav a {
   font-size: 13px;
@@ -931,8 +949,11 @@ p:last-child { margin-bottom: 0; }
   .scene-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 767px) {
-  .brand__mark { width: 34px; }
   .site-header { height: 72px; }
+  /* SPは3段ロゴを少し縮小して72pxに収める */
+  .site-header .brand__tagline { font-size: 10px; }
+  .site-header .brand__name { font-size: 20px; }
+  .site-header .brand__roman { font-size: 9px; }
 
   /* Hero SP(≤767): 縦積み。順序 1.eyebrow 2.H1 3.リード 4.写真 5.CTA */
   .hero--split {
@@ -975,7 +996,7 @@ p:last-child { margin-bottom: 0; }
     height: 34px; padding: 0 18px; font-size: 14px;
   }
   /* モックは472px幅想定。実機390/360では29pxだと最終行が折れるため4行を保てるよう上限29pxで縮小、行間は詰める */
-  .line-cta-title { font-size: clamp(24px, 6.6vw, 29px); line-height: 1.65; letter-spacing: 0.05em; margin-bottom: 30px; }
+  .line-cta-title { font-size: clamp(20px, 5.4vw, 23px); line-height: 1.7; letter-spacing: 0.05em; margin-bottom: 30px; }
   .line-cta-lead { display: none; }   /* SPは補足文なし */
   .line-cta-mobile-image {
     display: block; width: 100%; max-width: 330px;
