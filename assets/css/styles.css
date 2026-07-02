@@ -693,6 +693,67 @@ p:last-child { margin-bottom: 0; }
 }
 /* CTA内のLINE吹き出しアイコン */
 .btn__icon { width: 18px; height: 18px; flex: 0 0 auto; }
+
+/* ---------- LINE登録CTA帯（Hero直下 / Phase2 数値指定準拠 PC1440基準） ---------- */
+.line-cta-section {
+  position: relative;
+  min-height: 280px; height: 280px;
+  background: #F1EFEE;          /* Hero(生成り)直下にシームレス接続 */
+  overflow: hidden;
+}
+/* 固定CTA監視用の不可視アンカー（.cta-blockの見た目は打ち消し、可視判定だけに使う） */
+.line-cta-anchor {
+  position: absolute; inset: 0;
+  background: none; padding: 0; border-radius: 0;
+  overflow: visible; pointer-events: none; z-index: 0;
+}
+.line-cta-inner {
+  position: relative;
+  max-width: 1180px; height: 280px;
+  margin: 0 auto; padding: 0 16px;
+  display: grid;
+  grid-template-columns: 470px 1fr;
+  align-items: center;
+  gap: 56px;   /* 見出し32pxを2行に収めるため右カラム幅を確保（visual470は維持）。指定86→56 */
+}
+/* 左ビジュアル：スマホモック＋自然薯の籠（横長帯の主役） */
+.line-cta-visual { position: relative; width: 470px; height: 280px; }
+.line-basket {
+  position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%);
+  width: 285px; height: auto; z-index: 1; border-radius: 14px;
+}
+/* ラベル：PCは帯の左上（inner基準の絶対配置） */
+.line-cta-pill {
+  position: absolute; top: 18px; left: 32px; z-index: 3;
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 30px; padding: 0 16px; border-radius: 8px;
+  background: #F4DAD4; color: #C86F79;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+}
+.line-cta-content { max-width: 640px; padding-top: 8px; }   /* 見出し(17字)を2行に収めるため実効幅は広め（指定570→セル内） */
+.line-cta-title {
+  font-size: 32px; line-height: 1.65; letter-spacing: 0.06em;
+  font-weight: 500; color: #3D3B3B; margin: 0 0 18px;
+}
+.line-cta-lead {
+  font-size: 14px; line-height: 1.8; letter-spacing: 0.04em;
+  font-weight: 500; color: #7D7373; margin: 0 0 24px;
+}
+.line-cta-actions { display: flex; }
+.line-cta-button {
+  height: 50px; min-width: 286px; padding: 0 30px; gap: 10px;
+  border-radius: 999px; background: #F8D2C9; color: #3D3B3B;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.04em;
+  box-shadow: none;
+}
+.line-cta-mobile-image { display: none; }   /* PCでは非表示（SPで表示） */
+.line-cta-leaf {
+  position: absolute; right: 36px; top: 50%;
+  width: 120px; height: auto; transform: translateY(-50%);
+  opacity: 0.15; color: #D8CEC8; pointer-events: none; z-index: 1;
+}
+.lc-sp { display: none; }   /* PCはPC文言（SP文言は隠す） */
+
 /* 1199px以下はH1を縮小（49px以下にはしない）。1024基準は50px/1.44（数値指定 §8） */
 @media (min-width: 1024px) and (max-width: 1199px) {
   .hero-title { font-size: 52px; line-height: 1.44; }
@@ -787,6 +848,36 @@ p:last-child { margin-bottom: 0; }
   }
   .hero--split .hero-actions .btn { width: 100%; min-width: 0; height: 52px; }
   .hero-leaf { display: none; }
+
+  /* LINE登録CTA帯 SP：中央カード（ラベル→見出し→写真→大CTA） */
+  .line-cta-section { height: auto; min-height: 0; padding: 32px 20px; }   /* SPは高さ固定を解除（カードを全表示） */
+  .line-cta-inner { display: block; height: auto; max-width: none; padding: 0; }
+  .line-cta-visual { display: none; }
+  .line-cta-leaf { display: none; }
+  .line-cta-content {
+    max-width: 360px; margin: 0 auto;
+    background: rgba(255, 255, 255, 0.54);
+    border-radius: 22px; padding: 32px 20px 30px; text-align: center;
+  }
+  .line-cta-pill {
+    position: static; margin: 0 0 30px;
+    height: 34px; padding: 0 18px; font-size: 14px;
+  }
+  /* モックは472px幅想定。実機390/360では29pxだと最終行が折れるため4行を保てるよう上限29pxで縮小、行間は詰める */
+  .line-cta-title { font-size: clamp(24px, 6.6vw, 29px); line-height: 1.65; letter-spacing: 0.05em; margin-bottom: 30px; }
+  .line-cta-lead { display: none; }   /* SPは補足文なし */
+  .line-cta-mobile-image {
+    display: block; width: 100%; max-width: 330px;
+    margin: 0 auto 32px; border-radius: 14px; overflow: hidden;
+  }
+  .line-cta-mobile-image img { width: 100%; display: block; }
+  .line-cta-actions { justify-content: center; }
+  .line-cta-button {
+    width: 100%; max-width: 330px; height: 62px; min-width: 0;
+    border-radius: 20px; font-size: 16px; line-height: 1.5; margin: 0 auto;
+  }
+  .lc-pc { display: none; }
+  .lc-sp { display: inline; }
 
   .split { grid-template-columns: 1fr; gap: 26px; }
   .split--reverse .split-media { order: 0; } /* スマホでは常にテキスト→写真 */
