@@ -26,13 +26,15 @@
 <!-- Header -->
 <header class="site-header">
   <div class="container">
-    <a href="/" class="brand">はなさとみ<small>HANASATOMI</small></a>
+    <a href="/" class="brand"><img class="brand__mark" src="/assets/images/logo-mark.png" alt=""><span class="brand__text">はなさとみ<small>hanasatomi</small></span></a>
     <nav class="nav" id="site-nav">
+      <a href="/">トップ</a>
       <a href="/about/">はなさとみについて</a>
+      <a href="#jinenjo">自然薯について</a>
       <a href="/wholesale/">飲食店・小売店の方へ</a>
       <a href="/coming-soon/">一般販売について</a>
-      <a href="/contact/">お問い合わせ</a>
-      <a href="/line/" class="btn btn--primary">LINEで登録</a>
+      <a href="#company">会社概要</a>
+      <a href="/line/" class="btn btn--primary">LINEで登録する</a>
     </nav>
     <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
@@ -40,37 +42,26 @@
   </div>
 </header>
 
-<!-- 1. First view (split) -->
-<section class="hero hero--split">
-  <svg class="leaf-deco leaf-deco--tr leaf-deco--pink" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-    <path d="M40 180 C 60 120, 90 90, 150 40"/>
-    <path d="M95 96 C 80 70, 90 55, 120 60 C 110 85, 100 95, 95 96 Z"/>
-    <path d="M120 70 C 130 45, 150 40, 168 52 C 150 78, 132 78, 120 70 Z"/>
-    <path d="M70 130 C 55 110, 60 92, 88 96 C 82 120, 78 130, 70 130 Z"/>
+<!-- 1. Hero / ファーストビュー（左テキスト＋右写真背景の2層構成） -->
+<section class="hero hero--split" id="top">
+  <div class="hero-visual">
+    <img src="/assets/images/home-hero.jpg" alt="北茨城の畑で、収穫した自然薯を手にする様子">
+  </div>
+  <svg class="hero-leaf" viewBox="0 0 200 260" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+    <path d="M100 250 C 100 190, 96 130, 90 30"/>
+    <path d="M90 150 C 58 140, 40 112, 46 78 C 82 86, 98 118, 90 150 Z"/>
+    <path d="M92 120 C 126 110, 146 82, 140 50 C 104 58, 86 90, 92 120 Z"/>
+    <path d="M90 196 C 62 188, 46 164, 52 134 C 84 142, 98 168, 90 196 Z"/>
+    <path d="M94 168 C 124 160, 142 138, 138 110 C 108 116, 90 142, 94 168 Z"/>
   </svg>
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow">茨城県北茨城市 ｜ 自然薯農家</span>
-      <h1>土の香りごと、<br>やさしく届ける<span class="nb">自然薯を。</span></h1>
-      <p class="lead">株式会社はなさとみは、茨城県北茨城市で自然薯を育てる自然薯農家です。2026年11月の初出荷に向けて、飲食店・小売店さまへの先行案内と、一般販売のお知らせ登録を受け付けています。</p>
-      <div class="hero-actions">
-        <a href="/line/" class="btn btn--primary">LINEで最新情報を受け取る</a>
-        <a href="/wholesale/" class="btn btn--secondary">飲食店・小売店さまはこちら</a>
-      </div>
-    </div>
-    <div class="hero-photo">
-      <div class="photo-frame photo-frame--wide">
-        <!-- 写真差し替え: 下の行を有効化して src を実ファイルへ（プレースホルダは自動で隠れます）
-        <img src="/assets/images/hero.jpg" alt="北茨城・華川町の自然薯畑"> -->
-        <svg class="photo-frame__leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M100 175 C 100 120, 100 80, 100 30"/>
-          <path d="M100 120 C 70 110, 55 88, 60 60 C 90 66, 104 92, 100 120 Z"/>
-          <path d="M100 95 C 130 85, 148 62, 143 36 C 112 44, 96 68, 100 95 Z"/>
-          <path d="M100 150 C 78 142, 66 124, 70 104 C 94 110, 104 130, 100 150 Z"/>
-        </svg>
-        <span class="photo-frame__cap">北茨城・華川町の畑</span>
-      </div>
-    </div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">茨城県北茨城市 ｜ 自然薯農家</span>
+    <h1 class="hero-title">土の香りごと、<br>やさしく届ける<br class="br-sp">自然薯を。</h1>
+    <p class="hero-lead">『はなさとみ』は、北茨城の畑で一本一本ていねいに育てた自然薯を、飲食店・小売店・ご家庭へお届けする農家ブランドです。2026年11月、はじめての出荷を予定しています。</p>
+  </div>
+  <div class="hero-actions">
+    <a href="/line/" class="btn btn--primary"><svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.3 8.4 7.9.3.1.8.2.9.5.1.2.1.6 0 .9l-.1.8c0 .3-.2 1 .9.5 1-.4 5.7-3.4 7.8-5.7 1.4-1.6 2.1-3.2 2.1-4.9C22 6.6 17.5 3 12 3Z"/></svg>LINEで最新情報を受け取る</a>
+    <a href="/wholesale/" class="btn btn--secondary">飲食店・小売店さまはこちら</a>
   </div>
 </section>
 
@@ -122,7 +113,7 @@
 </section>
 
 <!-- 4. 自然薯について -->
-<section class="section section--green">
+<section class="section section--green" id="jinenjo">
   <div class="container">
     <div class="split split--reverse">
       <div class="split-text">
@@ -225,7 +216,7 @@
 </section>
 
 <!-- 8. 会社概要 -->
-<section class="section section--soft">
+<section class="section section--soft" id="company">
   <div class="container container--narrow">
     <div class="section-head">
       <span class="eyebrow">COMPANY</span>

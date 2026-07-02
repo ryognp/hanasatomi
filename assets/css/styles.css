@@ -235,31 +235,41 @@ p:last-child { margin-bottom: 0; }
   box-shadow: 0 0 0 3px rgba(248, 210, 201, 0.35);
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header（生成り寄り・半透明。Heroと一体化） ---------- */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 50;
   height: var(--header-h);
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-faint);
+  background: rgba(250, 246, 241, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: none;
 }
 .site-header .container {
+  max-width: 1320px;
+  padding-left: 40px;
+  padding-right: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  white-space: nowrap;
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   color: var(--text-main);
 }
+.brand__mark { width: 34px; height: auto; flex: 0 0 auto; }
+.brand__text { display: block; }
 .brand small {
   display: block;
   font-family: var(--font-body);
@@ -268,14 +278,24 @@ p:last-child { margin-bottom: 0; }
   color: var(--text-sub);
   margin-top: 2px;
 }
-.nav { display: flex; align-items: center; gap: 28px; }
+.nav { display: flex; align-items: center; gap: 28px; white-space: nowrap; }
 .nav a {
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.04em;
   color: var(--text-main);
+  white-space: nowrap;
   transition: color 0.2s ease;
 }
 .nav a:hover { color: var(--primary-deep); }
-.nav .btn { min-width: 0; padding: 10px 20px; font-size: 14px; }
+.nav .btn {
+  min-width: 154px;
+  height: 46px;
+  padding: 0 28px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+}
 
 .nav-toggle {
   display: none;
@@ -580,20 +600,106 @@ p:last-child { margin-bottom: 0; }
   padding: 6px 16px; border-radius: var(--radius-pill);
 }
 
-/* ---------- Hero split（左コピー / 右写真） ---------- */
-.hero--split { text-align: left; }
-.hero--split .container.hero-grid {
-  max-width: var(--max-width);
+/* ---------- Hero split（左テキスト / 右写真背景の2層。数値指定準拠 PC1440基準） ---------- */
+.hero--split {
+  position: relative;
+  height: 720px;
+  min-height: 720px;
+  margin-top: -80px;              /* = ヘッダー高さ。Heroをヘッダー背面から敷く */
+  padding-top: 80px;
+  overflow: hidden;
+  background: #F1EFEE;
+  margin-bottom: 0;               /* Hero直後に余白を作らない */
   text-align: left;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 48px;
-  align-items: center;
 }
-.hero-copy .eyebrow { display: block; margin-bottom: 14px; }
-.hero-copy h1 { margin-bottom: 18px; }
-.hero-copy .lead { margin-bottom: 28px; }
-.hero--split .hero-actions { justify-content: flex-start; }
+/* 右写真：Hero上端(0)から右端・下端まで。62vwの背景レイヤー */
+.hero-visual {
+  position: absolute;
+  top: 0; right: 0;
+  width: 62vw;
+  height: 720px;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 56% center;
+  display: block;
+}
+/* 写真左側を生成りで隠し右へフェード。56px 2行のH1背後に写真を出さないためクリームを広めに保持 */
+.hero-visual::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(241, 239, 238, 1.00) 0%,
+    rgba(241, 239, 238, 1.00) 34%,
+    rgba(241, 239, 238, 0.55) 46%,
+    rgba(241, 239, 238, 0.15) 60%,
+    rgba(241, 239, 238, 0.00) 74%);
+}
+/* 左コピー */
+.hero-content {
+  position: relative; z-index: 2;
+  width: 520px; max-width: 520px;
+  margin-left: 132px;
+  padding-top: 88px;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 18px;
+  margin: 0 0 34px;
+  font-size: 14px; line-height: 1; letter-spacing: 0.12em; font-weight: 500;
+  color: #3D3B3B;
+}
+.hero-eyebrow::after {
+  content: ""; display: block; width: 220px; height: 1px;
+  background: rgba(61, 59, 59, 0.24); flex: 0 0 auto;
+}
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 56px; line-height: 1.42; letter-spacing: 0.055em; font-weight: 500;
+  color: #3D3B3B;
+  margin: 0 0 34px;
+  white-space: nowrap;            /* line2(12字)を1行に保つ。列幅520を超え左のクリーム帯上に伸ばす */
+}
+.hero-title .br-sp { display: none; }   /* PCは2行（SPのみ3行目の改行を出す） */
+.hero-lead {
+  width: 500px; max-width: 500px;
+  margin: 0;
+  font-size: 16px; line-height: 2.05; letter-spacing: 0.04em; font-weight: 500;
+  color: #3D3B3B;
+}
+/* CTA：リード直下、同一ベースラインで横並び（左コピー起点 x132 に揃える） */
+.hero--split .hero-actions {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: flex-start; gap: 22px;
+  flex-wrap: nowrap;
+  margin: 30px 0 0 132px;
+}
+.hero--split .hero-actions .btn {
+  height: 52px; min-width: 266px; padding: 0 30px;
+  border-radius: var(--radius-pill);
+  font-size: 14px; font-weight: 600; letter-spacing: 0.04em;
+  box-shadow: none;
+}
+.hero--split .hero-actions .btn--secondary {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(125, 115, 115, 0.55);
+  color: #3D3B3B;
+}
+/* Hero左下の薄い植物線画（CTA背後に薄く） */
+.hero-leaf {
+  position: absolute; left: 32px; bottom: 74px; width: 132px; height: auto;
+  z-index: 1; opacity: 0.16; color: #D8CEC8; pointer-events: none;
+}
+/* CTA内のLINE吹き出しアイコン */
+.btn__icon { width: 18px; height: 18px; flex: 0 0 auto; }
+/* 1199px以下はH1を縮小（49px以下にはしない）。1024基準は50px/1.44（数値指定 §8） */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .hero-title { font-size: 52px; line-height: 1.44; }
+}
+@media (min-width: 1024px) and (max-width: 1080px) {
+  .hero-title { font-size: 50px; }
+}
 
 /* ---------- Split（写真＋テキストの2カラム） ---------- */
 .split {
@@ -644,13 +750,43 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ---------- Responsive（brushup） ---------- */
+/* PCナビ域が狭いとき（〜1180px）はナビ間隔と左右余白を詰めて折返し/はみ出しを防ぐ */
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .nav { gap: 16px; }
+  .site-header .container { padding-left: 24px; padding-right: 24px; }
+}
 @media (max-width: 1023px) {
   .scene-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 767px) {
-  .hero--split .container.hero-grid { grid-template-columns: 1fr; gap: 26px; }
-  .hero-photo { order: -1; }                 /* スマホ: 写真 → コピー → CTA */
-  .hero--split .hero-actions { justify-content: stretch; }
+  .brand__mark { width: 34px; }
+  .site-header { height: 72px; }
+
+  /* Hero SP(≤767): 縦積み。順序 1.eyebrow 2.H1 3.リード 4.写真 5.CTA */
+  .hero--split {
+    display: flex; flex-direction: column;
+    height: auto; min-height: 0;
+    margin-top: 0; padding: 88px 20px 40px;
+    background: #F1EFEE;
+  }
+  .hero-content { order: 1; position: static; width: 100%; max-width: none; margin-left: 0; padding-top: 0; }
+  .hero-eyebrow { margin-bottom: 24px; font-size: 13px; gap: 12px; }
+  .hero-eyebrow::after { width: 96px; }
+  .hero-title { font-size: 36px; line-height: 1.55; letter-spacing: 0.05em; margin-bottom: 24px; white-space: normal; }
+  .hero-title .br-sp { display: inline; }   /* SPは3行 */
+  .hero-lead { width: 100%; max-width: none; font-size: 15px; line-height: 1.95; margin-bottom: 0; }
+  .hero-visual {
+    order: 2; position: relative; top: auto; right: auto;
+    width: 100%; height: auto; margin-top: 28px; overflow: visible;
+  }
+  .hero-visual img { width: 100%; height: auto; object-fit: contain; object-position: center; }
+  .hero-visual::before { display: none; }
+  .hero--split .hero-actions {
+    order: 3; margin: 28px 0 0;
+    flex-direction: column; gap: 14px;
+  }
+  .hero--split .hero-actions .btn { width: 100%; min-width: 0; height: 52px; }
+  .hero-leaf { display: none; }
 
   .split { grid-template-columns: 1fr; gap: 26px; }
   .split--reverse .split-media { order: 0; } /* スマホでは常にテキスト→写真 */
