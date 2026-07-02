@@ -249,8 +249,9 @@ p:last-child { margin-bottom: 0; }
   border-bottom: none;
 }
 .site-header .container {
-  max-width: 1320px;
-  padding-left: 40px;
+  max-width: none;
+  /* ロゴ左端をHeroコピー左端(132px)に合わせる。1440で≈132px、1024以下で40pxへ滑らかに縮小 */
+  padding-left: clamp(40px, calc(40px + (100vw - 1024px) * 0.221), 132px);
   padding-right: 40px;
   display: flex;
   align-items: center;
@@ -943,13 +944,14 @@ p:last-child { margin-bottom: 0; }
 /* PCナビ域が狭いとき（〜1180px）はナビ間隔と左右余白を詰めて折返し/はみ出しを防ぐ */
 @media (min-width: 1024px) and (max-width: 1180px) {
   .nav { gap: 16px; }
-  .site-header .container { padding-left: 24px; padding-right: 24px; }
+  .site-header .container { padding-right: 24px; }
 }
 @media (max-width: 1023px) {
   .scene-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 767px) {
   .site-header { height: 72px; }
+  .site-header .container { padding-left: 20px; padding-right: 20px; }
   /* SPは3段ロゴを少し縮小して72pxに収める */
   .site-header .brand__tagline { font-size: 10px; }
   .site-header .brand__name { font-size: 20px; }
