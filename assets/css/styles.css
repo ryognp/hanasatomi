@@ -805,6 +805,66 @@ p:last-child { margin-bottom: 0; }
   font-size: 13px; font-weight: 500; box-shadow: none;
 }
 
+/* ---------- 飲食店・小売店さまへ（Phase4 数値指定準拠 PC1440基準） ---------- */
+.business-section { position: relative; background: #F1EFEE; padding: 96px 0; overflow: hidden; }
+.business-inner { max-width: 1080px; margin: 0 auto; padding: 0 32px; text-align: center; position: relative; z-index: 1; }
+.business-title {
+  font-family: var(--font-heading);
+  font-size: 30px; line-height: 1.6; letter-spacing: 0.08em; font-weight: 500;
+  color: #3D3B3B; margin: 0 0 24px;
+}
+.business-lead {
+  max-width: 720px; margin: 0 auto 46px;
+  font-size: 15px; line-height: 2.05; letter-spacing: 0.04em; font-weight: 400; color: #3D3B3B;
+}
+.business-icons {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  max-width: 920px; margin: 0 auto 42px;
+  border-top: 1px solid rgba(184, 175, 175, 0.36);
+  border-bottom: 1px solid rgba(184, 175, 175, 0.36);
+}
+.business-icon-item {
+  position: relative; padding: 28px 18px 26px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.business-icon-item:not(:last-child)::after {
+  content: ""; position: absolute; right: 0; top: 24px; bottom: 24px;
+  width: 1px; background: rgba(184, 175, 175, 0.36);
+}
+.business-icon { width: 42px; height: 42px; color: #3D3B3B; opacity: 0.82; }
+.business-icon-label { font-size: 14px; line-height: 1.5; letter-spacing: 0.05em; color: #3D3B3B; font-weight: 500; }
+.business-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 48px; min-width: 190px; padding: 0 28px;
+  border-radius: 999px; background: #F8D2C9; color: #3D3B3B;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none;
+}
+.business-leaf-left { position: absolute; left: -40px; top: 54%; width: 120px; opacity: 0.12; color: #D8CEC8; pointer-events: none; }
+.business-leaf-right { position: absolute; right: -40px; top: 18%; width: 120px; opacity: 0.12; color: #D8CEC8; pointer-events: none; }
+
+/* ---------- 一般販売について（Phase4 数値指定準拠 PC1440基準） ---------- */
+.general-sale-section { position: relative; background: #F1E9E7; padding: 86px 0; overflow: hidden; }
+.general-sale-inner {
+  max-width: 1180px; margin: 0 auto; padding: 0 32px;
+  display: grid; grid-template-columns: 420px 1fr; align-items: center; gap: 86px;
+}
+.general-sale-content { max-width: 420px; }
+.general-sale-kicker { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #B8AFAF; margin: 0 0 14px; }
+.general-sale-title {
+  font-family: var(--font-heading);
+  font-size: 30px; line-height: 1.6; letter-spacing: 0.08em; font-weight: 500;
+  color: #3D3B3B; margin: 0 0 24px;
+}
+.general-sale-text { font-size: 15px; line-height: 2.05; letter-spacing: 0.04em; color: #3D3B3B; margin: 0 0 30px; }
+.general-sale-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 44px; min-width: 210px; padding: 0 24px;
+  border-radius: 999px; background: #F8D2C9; color: #3D3B3B;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none;
+}
+.general-sale-image { width: 100%; height: 330px; overflow: hidden; border-radius: 0; }
+.general-sale-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+
 /* 1199px以下はH1を縮小（49px以下にはしない）。1024基準は50px/1.44（数値指定 §8） */
 @media (min-width: 1024px) and (max-width: 1199px) {
   .hero-title { font-size: 52px; line-height: 1.44; }
@@ -950,6 +1010,30 @@ p:last-child { margin-bottom: 0; }
   .about-intro-body, .jinenjo-body { display: flex; flex-direction: column; align-items: center; }
   .about-intro-text, .jinenjo-text { font-size: 14px; line-height: 2.0; letter-spacing: 0.04em; margin: 0 0 4px; }
   .about-intro-button, .jinenjo-button { height: 44px; min-width: 140px; padding: 0 24px; margin: 4px auto 0; }
+
+  /* 飲食店・小売店さまへ SP：見出し→本文→アイコン2列→CTA */
+  .business-section { padding: 54px 20px; background: #F1EFEE; }
+  .business-inner { max-width: none; }
+  .business-title { font-size: 24px; line-height: 1.7; letter-spacing: 0.08em; margin-bottom: 22px; }
+  .business-lead { max-width: none; margin-bottom: 32px; font-size: 14px; line-height: 2.0; }
+  .business-icons { grid-template-columns: repeat(2, 1fr); max-width: 340px; margin: 0 auto 34px; border: none; gap: 12px; }
+  .business-icon-item { background: rgba(255, 255, 255, 0.54); border-radius: 16px; padding: 22px 12px 20px; gap: 10px; }
+  .business-icon-item::after { display: none; }
+  .business-icon { width: 36px; height: 36px; }
+  .business-icon-label { font-size: 13px; line-height: 1.5; }
+  .business-button { width: 100%; max-width: 330px; height: 52px; font-size: 15px; }
+  .business-leaf-left, .business-leaf-right { display: none; }
+
+  /* 一般販売について SP：見出し→写真→本文→CTA（display:contents+order） */
+  .general-sale-section { padding: 48px 20px; background: #F1E9E7; }
+  .general-sale-inner { display: flex; flex-direction: column; gap: 22px; max-width: none; padding: 0; }
+  .general-sale-content { width: 100%; display: contents; }
+  .general-sale-kicker { order: 1; text-align: center; }
+  .general-sale-title { order: 2; font-size: 24px; line-height: 1.7; text-align: center; margin-bottom: 0; }
+  .general-sale-image { order: 3; width: 100%; height: auto; border-radius: 14px; overflow: hidden; }
+  .general-sale-image img { width: 100%; height: auto; display: block; }
+  .general-sale-text { order: 4; font-size: 14px; line-height: 2.0; letter-spacing: 0.04em; margin-bottom: 0; }
+  .general-sale-button { order: 5; width: 100%; max-width: 330px; height: 52px; margin: 2px auto 0; font-size: 15px; }
 
   .split { grid-template-columns: 1fr; gap: 26px; }
   .split--reverse .split-media { order: 0; } /* スマホでは常にテキスト→写真 */
