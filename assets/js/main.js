@@ -23,7 +23,7 @@ var LINE_URL = "https://lin.ee/U0a5Cxd";
   // スクロール判定方式（getBoundingClientRect）で、読み込み時・スクロール時・リサイズ時に評価する。
   var mobileCta = document.querySelector('.mobile-cta');
   if (mobileCta) {
-    var watched = document.querySelectorAll('.hero, .hero-renewal, .line-cta-band, .cta-block, .final-cta, .site-footer');
+    var watched = document.querySelectorAll('.hero, .hero-renewal, .line-cta-band, .cta-block, .final-band, .site-footer');
     var ticking = false;
     function updateMobileCta() {
       ticking = false;
