@@ -754,6 +754,57 @@ p:last-child { margin-bottom: 0; }
 }
 .lc-sp { display: none; }   /* PCはPC文言（SP文言は隠す） */
 
+/* ---------- はなさとみとは / 自然薯について（Phase3 数値指定準拠 PC1440基準） ---------- */
+.about-intro-section { position: relative; background: #F1EFEE; padding: 86px 0; overflow: hidden; }
+.jinenjo-section { position: relative; background: #D6E1D2; padding: 96px 0; overflow: hidden; }
+.about-intro-inner, .jinenjo-inner {
+  max-width: 1180px; margin: 0 auto; padding: 0 32px;
+  display: grid; align-items: center; column-gap: 86px; row-gap: 0;
+}
+/* DOM順は head→image→body（SPで 見出し→写真→本文→ボタン を order無しで実現）。PCはgrid-areaで左右に配置 */
+.about-intro-inner {
+  grid-template-columns: 420px 1fr;
+  grid-template-areas: "head image" "body image";
+  grid-template-rows: min-content min-content;
+  align-content: center;
+}
+.jinenjo-inner {
+  grid-template-columns: 1fr 420px;
+  grid-template-areas: "image head" "image body";
+  grid-template-rows: min-content min-content;
+  align-content: center;
+}
+.about-intro-head, .jinenjo-head { grid-area: head; }
+.about-intro-body, .jinenjo-body { grid-area: body; }
+/* 画像は絶対配置のimgで、grid行を膨らませずテキスト塊の高さに合わせて伸縮（見出し→本文を連続させる） */
+.about-intro-image, .jinenjo-image {
+  grid-area: image; position: relative; align-self: center;
+  width: 100%; height: 330px; overflow: hidden;
+}
+.jinenjo-image { border-radius: 14px; }
+.about-intro-image img, .jinenjo-image img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
+}
+.section-kicker {
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #B8AFAF; margin: 0 0 14px;
+}
+.about-intro-title, .jinenjo-title {
+  font-size: 30px; line-height: 1.6; letter-spacing: 0.08em;
+  font-weight: 500; color: #3D3B3B; margin: 0;
+}
+.about-intro-text, .jinenjo-text {
+  font-size: 15px; line-height: 2.05; letter-spacing: 0.04em;
+  color: #3D3B3B; margin: 24px 0 30px;
+}
+.about-intro-button, .jinenjo-button {
+  height: 44px; min-width: 138px; padding: 0 24px;
+  border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(125, 115, 115, 0.45); color: #3D3B3B;
+  font-size: 13px; font-weight: 500; box-shadow: none;
+}
+
 /* 1199px以下はH1を縮小（49px以下にはしない）。1024基準は50px/1.44（数値指定 §8） */
 @media (min-width: 1024px) and (max-width: 1199px) {
   .hero-title { font-size: 52px; line-height: 1.44; }
@@ -878,6 +929,27 @@ p:last-child { margin-bottom: 0; }
   }
   .lc-pc { display: none; }
   .lc-sp { display: inline; }
+
+  /* はなさとみとは / 自然薯について SP：縦積み（DOM順 見出し→写真→本文→ボタン） */
+  .about-intro-section, .jinenjo-section { padding: 42px 20px; }
+  .about-intro-section { background: #F1EFEE; }
+  .jinenjo-section { background: #D6E1D2; }
+  .about-intro-inner, .jinenjo-inner {
+    display: flex; flex-direction: column; gap: 22px; max-width: none; padding: 0;
+  }
+  .about-intro-head, .jinenjo-head { text-align: center; }
+  .section-kicker { text-align: center; }
+  .about-intro-title, .jinenjo-title {
+    font-size: 24px; line-height: 1.7; letter-spacing: 0.08em; text-align: center; margin: 0;
+  }
+  .about-intro-image, .jinenjo-image {
+    width: 100%; height: auto; border-radius: 14px; overflow: hidden; margin: 0;
+  }
+  /* SPは通常フローに戻す（PCの絶対配置を解除） */
+  .about-intro-image img, .jinenjo-image img { position: static; width: 100%; height: auto; display: block; }
+  .about-intro-body, .jinenjo-body { display: flex; flex-direction: column; align-items: center; }
+  .about-intro-text, .jinenjo-text { font-size: 14px; line-height: 2.0; letter-spacing: 0.04em; margin: 0 0 4px; }
+  .about-intro-button, .jinenjo-button { height: 44px; min-width: 140px; padding: 0 24px; margin: 4px auto 0; }
 
   .split { grid-template-columns: 1fr; gap: 26px; }
   .split--reverse .split-media { order: 0; } /* スマホでは常にテキスト→写真 */
