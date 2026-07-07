@@ -19,7 +19,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css?v=20260704-fadefooter">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="/assets/css/styles.css?v=20260707-linephoto">
 </head>
 <body>
 
@@ -65,21 +66,20 @@
 </section>
 
 <!-- 2. LINE registration CTA（Hero直下の生成り帯） -->
-<section class="line-cta-section" aria-labelledby="line-cta-heading">
+<section class="line-cta-section reveal" aria-labelledby="line-cta-heading">
   <!-- 固定CTA(.mobile-cta)の出し分け用アンカー：main.jsが.cta-blockの可視でmobile-ctaを隠すため、この帯が見える間は隠す。見た目は打ち消し済み -->
   <span class="cta-block line-cta-anchor" aria-hidden="true"></span>
   <div class="line-cta-inner">
     <div class="line-cta-visual" aria-hidden="true">
-      <img class="line-basket" src="/assets/images/line-basket.jpg" alt="">
+      <img class="line-basket" src="/assets/images/jinenjyo-29.jpg" alt="">
     </div>
     <div class="line-cta-content">
-      <span class="line-cta-pill">LINEでご案内</span>
       <h2 class="line-cta-title" id="line-cta-heading">
         <span class="lc-pc">出荷時期や販売開始、業務用のご相談は<br>LINEでご案内します。</span>
         <span class="lc-sp">出荷のお知らせ、<br>販売開始、業務用の<br>ご相談は<br>LINEでご案内します。</span>
       </h2>
       <div class="line-cta-mobile-image" aria-hidden="true">
-        <img src="/assets/images/line-basket.jpg" alt="">
+        <img src="/assets/images/jinenjyo-29.jpg" alt="">
       </div>
       <p class="line-cta-lead">最新情報をいち早くお届けします。</p>
       <div class="line-cta-actions">
@@ -101,7 +101,7 @@
 </section>
 
 <!-- 3. はなさとみとは（左テキスト / 右に畑の風景） -->
-<section class="about-intro-section">
+<section class="about-intro-section reveal">
   <div class="about-intro-inner">
     <div class="about-intro-head">
       <p class="section-kicker">ABOUT HANASATOMI</p>
@@ -118,14 +118,14 @@
 </section>
 
 <!-- 4. 自然薯について（左にとろろ / 右テキスト） -->
-<section class="jinenjo-section" id="jinenjo">
+<section class="jinenjo-section reveal" id="jinenjo">
   <div class="jinenjo-inner">
     <div class="jinenjo-head">
       <p class="section-kicker">ABOUT JINENJO</p>
       <h2 class="jinenjo-title">自然薯について</h2>
     </div>
     <div class="jinenjo-image">
-      <img src="/assets/images/home-tororo.jpg" alt="すりおろした自然薯（とろろ）">
+      <img src="/assets/images/jinenjyo-24.jpg" alt="すりおろした自然薯の生地をこねるようす">
     </div>
     <div class="jinenjo-body">
       <p class="jinenjo-text">自然薯は、日本原産の山芋の一種。粘りの強さ、香り、滋味深い味わいが特徴で、とろろ、麦とろ、蕎麦、椀物、磯辺揚げ、鍋料理など、秋冬の料理に幅広く使われます。</p>
@@ -135,7 +135,7 @@
 </section>
 
 <!-- 5. 飲食店・小売店さまへ（中央寄せ＋アイコン5つ＋CTA） -->
-<section class="business-section">
+<section class="business-section reveal">
   <svg class="business-leaf-left" viewBox="0 0 200 260" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
     <path d="M100 250 C 100 190, 96 130, 90 30"/>
     <path d="M90 150 C 58 140, 40 112, 46 78 C 82 86, 98 118, 90 150 Z"/>
@@ -188,7 +188,7 @@
 </section>
 
 <!-- 6. 一般販売について（左テキスト / 右に贈答イメージ） -->
-<section class="general-sale-section">
+<section class="general-sale-section reveal">
   <div class="general-sale-inner">
     <div class="general-sale-content">
       <p class="general-sale-kicker">ONLINE SALES</p>
@@ -231,7 +231,7 @@
 -->
 
 <!-- 9. よくあるご質問 -->
-<section class="section section--surface">
+<section class="section section--surface reveal">
   <div class="container container--narrow">
     <div class="section-head">
       <span class="eyebrow">FAQ</span>
@@ -259,7 +259,7 @@
 </section>
 
 <!-- 10. Final CTA -->
-<section class="section section--surface" style="padding-top:0;">
+<section class="section section--surface reveal" style="padding-top:0;">
   <div class="container">
     <div class="cta-block">
       <svg class="leaf-deco leaf-deco--tr leaf-deco--pink" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -278,7 +278,7 @@
 </section>
 
 <!-- 会社概要（フッター直前） -->
-<section class="section section--soft" id="company">
+<section class="section section--soft reveal" id="company">
   <div class="container container--narrow">
     <div class="section-head">
       <span class="eyebrow">COMPANY</span>
@@ -341,6 +341,6 @@
   <a href="/line/" class="btn btn--primary">LINEで最新情報を受け取る</a>
 </div>
 
-<script src="/assets/js/main.js?v=20260704-fadefooter"></script>
+<script src="/assets/js/main.js?v=20260707-linephoto"></script>
 </body>
 </html>

@@ -9,6 +9,41 @@
 var LINE_URL = "https://lin.ee/U0a5Cxd";
 
 (function () {
+  // JS有効フラグ（.reveal の初期非表示を .js 有効時だけに限定＝JS無効でも内容は表示される）
+  document.documentElement.classList.add('js');
+
+  // ヘッダー：一定量スクロールしたら .is-scrolled を付与（背景を少し濃く＋薄い影）
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var headerTicking = false;
+    function updateHeader() {
+      headerTicking = false;
+      header.classList.toggle('is-scrolled', window.pageYOffset > 24);
+    }
+    window.addEventListener('scroll', function () {
+      if (!headerTicking) { headerTicking = true; window.requestAnimationFrame(updateHeader); }
+    }, { passive: true });
+    updateHeader();
+  }
+
+  // スクロール時フェードイン：一度表示したら監視解除。IntersectionObserver 非対応時は全表示。
+  var reveals = document.querySelectorAll('.reveal');
+  if (reveals.length) {
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries, obs) {
+        for (var k = 0; k < entries.length; k++) {
+          if (entries[k].isIntersecting) {
+            entries[k].target.classList.add('is-visible');
+            obs.unobserve(entries[k].target);
+          }
+        }
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+      for (var r = 0; r < reveals.length; r++) { io.observe(reveals[r]); }
+    } else {
+      for (var m = 0; m < reveals.length; m++) { reveals[m].classList.add('is-visible'); }
+    }
+  }
+
   // data-line-link を持つ要素すべてに LINE_URL を反映（外部リンク化）。
   // JS無効時はHTML側の fallback href="/line/"（内部・同ページ）が効き、
   // リンクとして違和感なく機能する。JS有効時のみ外部URL＋別タブに昇格させる。
