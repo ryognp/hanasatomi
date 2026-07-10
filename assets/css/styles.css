@@ -898,6 +898,23 @@ p:last-child { margin-bottom: 0; }
 /* ---------- 利用想定タグ ---------- */
 .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 
+/* ---------- ストーリータイムライン（aboutページ：沿革・ヒストリー） ---------- */
+.story-timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+.story-timeline::before {
+  content: ""; position: absolute; left: 0; top: 8px; bottom: 8px;
+  width: 1px; background: var(--border-soft);
+}
+.story-item { position: relative; }
+.story-item + .story-item { margin-top: 48px; }
+.story-item::before {
+  content: ""; position: absolute; left: -28px; top: 9px;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--primary-deep);
+}
+.story-item h3 { margin: 0 0 14px; color: var(--text-main); }
+.story-item p { margin: 0 0 14px; }
+.story-item p:last-child { margin-bottom: 0; }
+
 /* ---------- 会社概要表 ---------- */
 .info-card { padding: 28px 32px; }
 .info-table { width: 100%; border-collapse: collapse; }
@@ -1048,6 +1065,11 @@ p:last-child { margin-bottom: 0; }
 
   .split { grid-template-columns: 1fr; gap: 26px; }
   .split--reverse .split-media { order: 0; } /* スマホでは常にテキスト→写真 */
+
+  .story-timeline { margin-top: 24px; padding-left: 20px; }
+  .story-timeline::before { background: var(--border-faint); }   /* SPは縦線を薄く */
+  .story-item::before { left: -20px; width: 6px; height: 6px; }
+  .story-item + .story-item { margin-top: 36px; }
 
   .info-card { padding: 22px; }
   .info-table th { width: 40%; font-size: 13px; }
