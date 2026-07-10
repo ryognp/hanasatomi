@@ -124,9 +124,11 @@ p:last-child { margin-bottom: 0; }
 
 .section-head { text-align: center; margin-bottom: 40px; }
 .section-head .eyebrow { display: block; margin-bottom: 12px; }
-.section-head h2 { margin-bottom: 12px; }
+.section-head h2 { margin-bottom: 24px; }
 
-.stack > * + * { margin-top: 24px; }
+.stack > * + * { margin-top: 26px; }
+.stack p { line-height: 1.95; max-width: 680px; }
+.stack p + p { margin-top: 16px; }
 
 .grid { display: grid; gap: 24px; }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
@@ -551,6 +553,8 @@ p:last-child { margin-bottom: 0; }
 
   .section { padding: 56px 0; }
   .section-head { margin-bottom: 24px; }
+  .section-head h2 { margin-bottom: 20px; }
+  .split .split-text p { line-height: 1.9; }
 
   .grid--2, .grid--3 { grid-template-columns: 1fr; }
 
@@ -587,13 +591,13 @@ p:last-child { margin-bottom: 0; }
 .photo-frame {
   position: relative;
   aspect-ratio: 4 / 3;
-  border-radius: var(--radius-card);
-  border: 1px solid var(--border-soft);
+  border-radius: 26px;
+  border: 1px solid rgba(184, 175, 175, 0.22);
   overflow: hidden;
   background: linear-gradient(150deg, var(--primary-soft) 0%, var(--accent-green-soft) 100%);
   display: grid;
   place-items: center;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 18px 40px rgba(61, 59, 59, 0.06);
 }
 .photo-frame--wide { aspect-ratio: 16 / 9; }
 .photo-frame--tall { aspect-ratio: 3 / 4; }
@@ -620,9 +624,10 @@ p:last-child { margin-bottom: 0; }
 }
 /* 写真下の控えめなキャプション（aboutページ写真3枚） */
 .photo-caption {
-  margin: 10px 0 0;
-  font-size: 13px; letter-spacing: 0.04em;
+  margin: 11px 0 0;
+  font-size: 13px; line-height: 1.7; letter-spacing: 0.02em;
   color: var(--text-sub);
+  text-align: center;
 }
 
 /* ---------- Hero split（左テキスト / 右写真背景の2層。数値指定準拠 PC1440基準） ---------- */
@@ -797,8 +802,8 @@ p:last-child { margin-bottom: 0; }
 .about-intro-image, .jinenjo-image {
   grid-area: image; position: relative; align-self: center;
   width: 100%; height: 330px; overflow: hidden;
+  border-radius: 26px; box-shadow: 0 18px 40px rgba(61, 59, 59, 0.06);
 }
-.jinenjo-image { border-radius: 14px; }
 .about-intro-image img, .jinenjo-image img {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
@@ -812,14 +817,15 @@ p:last-child { margin-bottom: 0; }
   font-weight: 500; color: #3D3B3B; margin: 0;
 }
 .about-intro-text, .jinenjo-text {
-  font-size: 15px; line-height: 2.05; letter-spacing: 0.04em;
-  color: #3D3B3B; margin: 24px 0 30px;
+  font-size: 16px; line-height: 1.95; letter-spacing: 0.04em;
+  color: #3D3B3B; margin: 26px 0 0;
 }
 .about-intro-button, .jinenjo-button {
-  height: 44px; min-width: 138px; padding: 0 24px;
+  height: 50px; min-width: 138px; padding: 0 28px;
   border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(125, 115, 115, 0.45); color: #3D3B3B;
-  font-size: 13px; font-weight: 500; box-shadow: none;
+  font-size: 14.5px; font-weight: 500; letter-spacing: 0.03em; box-shadow: none;
+  margin-top: 26px;
 }
 
 /* ---------- 飲食店・小売店さまへ（Phase4 数値指定準拠 PC1440基準） ---------- */
@@ -831,8 +837,8 @@ p:last-child { margin-bottom: 0; }
   color: #3D3B3B; margin: 0 0 24px;
 }
 .business-lead {
-  max-width: 720px; margin: 0 auto 46px;
-  font-size: 15px; line-height: 2.05; letter-spacing: 0.04em; font-weight: 400; color: #3D3B3B;
+  max-width: 680px; margin: 0 auto 46px;
+  font-size: 16px; line-height: 1.95; letter-spacing: 0.04em; font-weight: 400; color: #3D3B3B;
 }
 .business-icons {
   display: grid; grid-template-columns: repeat(5, 1fr);
@@ -852,15 +858,15 @@ p:last-child { margin-bottom: 0; }
 .business-icon-label { font-size: 14px; line-height: 1.5; letter-spacing: 0.05em; color: #3D3B3B; font-weight: 500; }
 .business-button {
   display: inline-flex; align-items: center; justify-content: center;
-  height: 48px; min-width: 190px; padding: 0 28px;
+  height: 50px; min-width: 190px; padding: 0 28px;
   border-radius: 999px; background: #F8D2C9; color: #3D3B3B;
-  font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none;
+  font-size: 14.5px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none;
 }
 .business-leaf-left { position: absolute; left: -40px; top: 54%; width: 120px; opacity: 0.12; color: #D8CEC8; pointer-events: none; }
 .business-leaf-right { position: absolute; right: -40px; top: 18%; width: 120px; opacity: 0.12; color: #D8CEC8; pointer-events: none; }
 
 /* ---------- 一般販売について（Phase4 数値指定準拠 PC1440基準） ---------- */
-.general-sale-section { position: relative; background: #F1E9E7; padding: 86px 0; overflow: hidden; }
+.general-sale-section { position: relative; background: #F1E9E7; padding: 92px 0; overflow: hidden; }
 .general-sale-inner {
   max-width: 1180px; margin: 0 auto; padding: 0 32px;
   display: grid; grid-template-columns: 420px 1fr; align-items: center; gap: 86px;
@@ -872,28 +878,32 @@ p:last-child { margin-bottom: 0; }
   font-size: 30px; line-height: 1.6; letter-spacing: 0.08em; font-weight: 500;
   color: #3D3B3B; margin: 0 0 24px;
 }
-.general-sale-text { font-size: 15px; line-height: 2.05; letter-spacing: 0.04em; color: #3D3B3B; margin: 0 0 30px; }
+.general-sale-text { font-size: 16px; line-height: 1.95; letter-spacing: 0.04em; color: #3D3B3B; margin: 0 0 16px; }
+.general-sale-text:last-of-type { margin-bottom: 0; }
 .general-sale-button {
   display: inline-flex; align-items: center; justify-content: center;
-  height: 44px; min-width: 210px; padding: 0 24px;
+  height: 50px; min-width: 210px; padding: 0 28px;
   border-radius: 999px; background: #F8D2C9; color: #3D3B3B;
-  font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none;
+  font-size: 14.5px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none;
+  margin-top: 26px;
 }
-.general-sale-image { width: 100%; height: 330px; overflow: hidden; border-radius: 0; }
+.general-sale-image { width: 100%; height: 330px; overflow: hidden; border-radius: 26px; box-shadow: 0 18px 40px rgba(61, 59, 59, 0.06); }
 .general-sale-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 
 /* ---------- 「極」ミニセクション（TOP／一般販売について直後） ---------- */
-.kiwami-section { background: var(--surface); padding: 72px 0; }
+.kiwami-section { background: var(--surface); padding: 80px 0; }
 .kiwami-card {
   display: flex; align-items: center; gap: 48px;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-card);
+  max-width: 1000px; margin: 0 auto;
+  border: 1px solid rgba(184, 175, 175, 0.24);
+  border-radius: 30px;
   background: linear-gradient(135deg, #FAF6F2 0%, var(--primary-soft) 100%);
-  padding: 48px 56px;
+  box-shadow: 0 20px 50px rgba(61, 59, 59, 0.055);
+  padding: 40px 48px;
 }
 .kiwami-badge {
   flex: 0 0 auto;
-  width: 84px; height: 84px; border-radius: 50%;
+  width: 78px; height: 78px; border-radius: 50%;
   border: 1px solid var(--border-soft);
   background: var(--surface);
   display: flex; align-items: center; justify-content: center;
@@ -903,13 +913,13 @@ p:last-child { margin-bottom: 0; }
 .kiwami-kicker { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-sub); margin: 0 0 12px; }
 .kiwami-title {
   font-family: var(--font-heading);
-  font-size: 26px; line-height: 1.6; letter-spacing: 0.08em; font-weight: 500;
+  font-size: 26px; line-height: 1.55; letter-spacing: 0.08em; font-weight: 500;
   color: var(--text-main); margin: 0 0 16px;
   white-space: nowrap;   /* PCはカード幅に対して1行を保証 */
 }
 .kiwami-title .br-sp { display: none; }   /* PCは1行、SPのみ改行 */
-.kiwami-text { font-size: 15px; line-height: 2.05; letter-spacing: 0.04em; color: var(--text-main); margin: 0 0 26px; }
-.kiwami-cta { height: 48px; min-width: 260px; padding: 0 28px; font-size: 14px; }
+.kiwami-text { max-width: 680px; font-size: 16px; line-height: 1.95; letter-spacing: 0.04em; color: var(--text-main); margin: 0; }
+.kiwami-cta { height: 50px; min-width: 260px; padding: 0 28px; font-size: 14.5px; margin-top: 26px; }
 
 /* 1199px以下はH1を縮小（49px以下にはしない）。1024基準は50px/1.44（数値指定 §8） */
 @media (min-width: 1024px) and (max-width: 1199px) {
@@ -926,28 +936,30 @@ p:last-child { margin-bottom: 0; }
   gap: 48px;
   align-items: center;
 }
-.split .split-text > .eyebrow { display: block; margin-bottom: 10px; }
-.split .split-text h2 { margin-bottom: 16px; }
+.split .split-text > .eyebrow { display: block; margin-bottom: 12px; }
+.split .split-text h2 { margin-bottom: 26px; }
+.split .split-text p { line-height: 1.95; }
 .split--reverse .split-media { order: -1; }
 
 /* ---------- 利用想定タグ ---------- */
 .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 
 /* ---------- ストーリータイムライン（aboutページ：沿革・ヒストリー） ---------- */
+.container--story { max-width: 920px; }
 .story-timeline { position: relative; margin-top: 32px; padding-left: 28px; }
 .story-timeline::before {
   content: ""; position: absolute; left: 0; top: 8px; bottom: 8px;
-  width: 1px; background: var(--border-soft);
+  width: 1px; background: rgba(184, 175, 175, 0.42);
 }
 .story-item { position: relative; }
-.story-item + .story-item { margin-top: 48px; }
+.story-item + .story-item { margin-top: 40px; }
 .story-item::before {
   content: ""; position: absolute; left: -28px; top: 9px;
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--primary-deep);
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--primary);
 }
-.story-item h3 { margin: 0 0 14px; color: var(--text-main); }
-.story-item p { margin: 0 0 14px; }
+.story-item h3 { margin: 0 0 16px; color: var(--text-main); }
+.story-item p { max-width: 680px; line-height: 1.95; margin: 0 0 16px; }
 .story-item p:last-child { margin-bottom: 0; }
 
 /* ---------- 会社概要表 ---------- */
@@ -1054,7 +1066,7 @@ p:last-child { margin-bottom: 0; }
   .lc-sp { display: inline; }
 
   /* はなさとみとは / 自然薯について SP：縦積み（DOM順 見出し→写真→本文→ボタン） */
-  .about-intro-section, .jinenjo-section { padding: 42px 20px; }
+  .about-intro-section, .jinenjo-section { padding: 60px 20px; }
   .about-intro-section { background: #F1EFEE; }
   .jinenjo-section { background: #D6E1D2; }
   .about-intro-inner, .jinenjo-inner {
@@ -1066,55 +1078,63 @@ p:last-child { margin-bottom: 0; }
     font-size: 24px; line-height: 1.7; letter-spacing: 0.08em; text-align: center; margin: 0;
   }
   .about-intro-image, .jinenjo-image {
-    width: 100%; height: auto; border-radius: 14px; overflow: hidden; margin: 0;
+    width: 100%; height: auto; border-radius: 22px; overflow: hidden; margin: 0;
+    box-shadow: 0 14px 30px rgba(61, 59, 59, 0.06);
   }
   /* SPは通常フローに戻す（PCの絶対配置を解除） */
   .about-intro-image img, .jinenjo-image img { position: static; width: 100%; height: auto; display: block; }
   .about-intro-body, .jinenjo-body { display: flex; flex-direction: column; align-items: center; }
-  .about-intro-text, .jinenjo-text { font-size: 14px; line-height: 2.0; letter-spacing: 0.04em; margin: 0 0 4px; }
-  .about-intro-button, .jinenjo-button { height: 44px; min-width: 140px; padding: 0 24px; margin: 4px auto 0; }
+  .about-intro-text, .jinenjo-text { font-size: 15.5px; line-height: 1.9; letter-spacing: 0.04em; margin: 0; }
+  .about-intro-button, .jinenjo-button { height: 52px; min-width: 140px; padding: 0 24px; margin: 24px auto 0; }
 
   /* 飲食店・小売店さまへ SP：見出し→本文→アイコン2列→CTA */
-  .business-section { padding: 54px 20px; background: #F1EFEE; }
+  .business-section { padding: 60px 20px; background: #F1EFEE; }
   .business-inner { max-width: none; }
   .business-title { font-size: 24px; line-height: 1.7; letter-spacing: 0.08em; margin-bottom: 22px; }
-  .business-lead { max-width: none; margin-bottom: 32px; font-size: 14px; line-height: 2.0; }
+  .business-lead { max-width: none; margin-bottom: 32px; font-size: 15.5px; line-height: 1.9; }
   .business-icons { grid-template-columns: repeat(2, 1fr); max-width: 340px; margin: 0 auto 34px; border: none; gap: 12px; }
   .business-icon-item { background: rgba(255, 255, 255, 0.54); border-radius: 16px; padding: 22px 12px 20px; gap: 10px; }
   .business-icon-item::after { display: none; }
   .business-icon { width: 36px; height: 36px; }
   .business-icon-label { font-size: 13px; line-height: 1.5; }
-  .business-button { width: 100%; max-width: 330px; height: 52px; font-size: 15px; }
+  .business-button { width: 100%; max-width: 330px; height: 52px; font-size: 14.5px; }
   .business-leaf-left, .business-leaf-right { display: none; }
 
   /* 一般販売について SP：見出し→写真→本文→CTA（display:contents+order） */
-  .general-sale-section { padding: 48px 20px; background: #F1E9E7; }
+  .general-sale-section { padding: 60px 20px; background: #F1E9E7; }
   .general-sale-inner { display: flex; flex-direction: column; gap: 22px; max-width: none; padding: 0; }
   .general-sale-content { width: 100%; display: contents; }
   .general-sale-kicker { order: 1; text-align: center; }
   .general-sale-title { order: 2; font-size: 24px; line-height: 1.7; text-align: center; margin-bottom: 0; }
-  .general-sale-image { order: 3; width: 100%; height: auto; border-radius: 14px; overflow: hidden; }
+  .general-sale-image { order: 3; width: 100%; height: auto; border-radius: 22px; overflow: hidden; box-shadow: 0 14px 30px rgba(61, 59, 59, 0.06); }
   .general-sale-image img { width: 100%; height: auto; display: block; }
-  .general-sale-text { order: 4; font-size: 14px; line-height: 2.0; letter-spacing: 0.04em; margin-bottom: 0; }
-  .general-sale-button { order: 5; width: 100%; max-width: 330px; height: 52px; margin: 2px auto 0; font-size: 15px; }
+  .general-sale-text { order: 4; font-size: 15.5px; line-height: 1.9; letter-spacing: 0.04em; margin-bottom: 14px; }
+  .general-sale-text:last-of-type { margin-bottom: 0; }
+  .general-sale-button { order: 5; width: 100%; max-width: 330px; height: 52px; margin: 24px auto 0; font-size: 14.5px; }
 
   .split { grid-template-columns: 1fr; gap: 26px; }
   .split--reverse .split-media { order: 0; } /* スマホでは常にテキスト→写真 */
 
-  .story-timeline { margin-top: 24px; padding-left: 20px; }
+  .container--story { max-width: 100%; }
+  .story-timeline { margin-top: 24px; padding-left: 26px; }
   .story-timeline::before { background: var(--border-faint); }   /* SPは縦線を薄く */
-  .story-item::before { left: -20px; width: 6px; height: 6px; }
-  .story-item + .story-item { margin-top: 36px; }
+  .story-item::before { left: -26px; width: 7px; height: 7px; }
+  .story-item + .story-item { margin-top: 32px; }
+  .story-item p { line-height: 1.9; }
+  .stack p { line-height: 1.9; }
 
   /* 「極」ミニセクション SP：縦積み・中央寄せ（本文は左寄せのまま） */
-  .kiwami-section { padding: 48px 0; }
-  .kiwami-card { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; gap: 20px; }
-  .kiwami-badge { width: 64px; height: 64px; font-size: 22px; }
+  .kiwami-section { padding: 60px 0; }
+  .kiwami-card { flex-direction: column; align-items: center; text-align: center; padding: 30px 24px; gap: 20px; border-radius: 26px; }
+  .kiwami-badge { width: 66px; height: 66px; font-size: 25px; }
   .kiwami-kicker, .kiwami-title { text-align: center; }
-  .kiwami-title { font-size: 24px; line-height: 1.7; margin-bottom: 14px; white-space: normal; }
+  .kiwami-title { font-size: 24px; line-height: 1.65; margin-bottom: 14px; white-space: normal; }
   .kiwami-title .br-sp { display: inline; }   /* SPは2行 */
-  .kiwami-text { text-align: left; font-size: 14px; line-height: 2.0; margin-bottom: 22px; }
-  .kiwami-cta { width: 100%; max-width: 330px; height: 52px; font-size: 15px; }
+  .kiwami-text { text-align: left; font-size: 15px; line-height: 1.9; margin-bottom: 0; }
+  .kiwami-cta { width: 100%; max-width: 330px; height: 52px; font-size: 14.5px; margin-top: 24px; }
+
+  .photo-frame { border-radius: 22px; }
+  .photo-caption { margin-top: 9px; font-size: 12.5px; }
 
   .info-card { padding: 22px; }
   .info-table th { width: 40%; font-size: 13px; }
