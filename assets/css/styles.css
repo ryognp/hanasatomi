@@ -903,9 +903,11 @@ p:last-child { margin-bottom: 0; }
 .kiwami-kicker { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-sub); margin: 0 0 12px; }
 .kiwami-title {
   font-family: var(--font-heading);
-  font-size: 30px; line-height: 1.6; letter-spacing: 0.08em; font-weight: 500;
+  font-size: 26px; line-height: 1.6; letter-spacing: 0.08em; font-weight: 500;
   color: var(--text-main); margin: 0 0 16px;
+  white-space: nowrap;   /* PCはカード幅に対して1行を保証 */
 }
+.kiwami-title .br-sp { display: none; }   /* PCは1行、SPのみ改行 */
 .kiwami-text { font-size: 15px; line-height: 2.05; letter-spacing: 0.04em; color: var(--text-main); margin: 0 0 26px; }
 .kiwami-cta { height: 48px; min-width: 260px; padding: 0 28px; font-size: 14px; }
 
@@ -1109,7 +1111,8 @@ p:last-child { margin-bottom: 0; }
   .kiwami-card { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; gap: 20px; }
   .kiwami-badge { width: 64px; height: 64px; font-size: 22px; }
   .kiwami-kicker, .kiwami-title { text-align: center; }
-  .kiwami-title { font-size: 24px; line-height: 1.7; margin-bottom: 14px; }
+  .kiwami-title { font-size: 24px; line-height: 1.7; margin-bottom: 14px; white-space: normal; }
+  .kiwami-title .br-sp { display: inline; }   /* SPは2行 */
   .kiwami-text { text-align: left; font-size: 14px; line-height: 2.0; margin-bottom: 22px; }
   .kiwami-cta { width: 100%; max-width: 330px; height: 52px; font-size: 15px; }
 
