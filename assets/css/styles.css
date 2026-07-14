@@ -1093,8 +1093,9 @@ p:last-child { margin-bottom: 0; }
 /* ---------- Responsive（brushup） ---------- */
 /* PCナビ域が狭いとき（〜1180px）はナビ間隔と左右余白を詰めて折返し/はみ出しを防ぐ */
 @media (min-width: 1024px) and (max-width: 1180px) {
-  .nav { gap: 16px; }
-  .site-header .container { padding-right: 24px; }
+  .nav { gap: 10px; }
+  .nav a { font-size: 12.5px; }
+  .site-header .container { padding-right: 20px; }
 }
 @media (max-width: 1023px) {
   .scene-grid { grid-template-columns: repeat(3, 1fr); }
