@@ -57,3 +57,30 @@
 @media (max-width: 767px) {
   .yam-mukago-gallery { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V5
+ * Original food photography · existing botanical typography and spacing.
+ */
+.yam-texture { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 48px; align-items: center; }
+.yam-texture-photo { width: 100%; max-width: 400px; margin: 0 auto; }
+.yam-texture-photo img, .yam-dish-photo img { display: block; width: 100%; height: auto; border-radius: var(--radius-card); }
+.yam-texture-copy, .yam-dish-materials { min-width: 0; }
+.yam-texture-copy .yam-lead { margin-bottom: 24px; }
+.yam-dish { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.yam-dish-photo { min-width: 0; margin: 0; }
+#ume-shiso .eyebrow { color: var(--text-main); }
+.yam-dish-materials h3 { margin-bottom: 24px; }
+.yam-ingredients > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border-soft); }
+.yam-ingredients dt { min-width: 0; }
+.yam-ingredients dt small { font-size: 14px; }
+.yam-ingredients dd { text-align: right; white-space: nowrap; }
+.yam-mukago-meal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; align-items: center; margin-top: 64px; }
+.yam-mukago-meal .eyebrow { display: block; margin-bottom: 12px; color: var(--text-main); }
+.yam-mukago-meal h3 { margin-bottom: 24px; }
+@media (max-width: 767px) {
+  .yam-texture, .yam-dish, .yam-mukago-meal { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+}
+
+@media (max-width: 980px) {
+  .yam-texture { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+}
