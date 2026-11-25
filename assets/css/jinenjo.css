@@ -1,0 +1,45 @@
+/* 自然薯と長芋の比較。DESIGN.md「自然薯・長芋の比較表」に準拠。 */
+.yam-skip { position: absolute; top: -100px; left: 24px; z-index: 200; padding: 12px 16px; background: var(--surface); }
+.yam-skip:focus { top: 12px; }
+.yam-content { max-width: var(--max-width); }
+.yam-lead { max-width: var(--content-width); margin: 0 auto 40px; }
+.yam-jumps { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
+.yam-jumps a { padding: 12px 16px; border: 1px solid var(--border-soft); border-radius: var(--radius-pill); background: var(--surface); font-size: 14px; }
+.yam-jumps a:hover { background: var(--primary-soft); }
+.yam-page a:focus-visible, .yam-page summary:focus-visible { outline: 3px solid var(--text-main); outline-offset: 4px; }
+.yam-page section[id] { scroll-margin-top: calc(var(--header-h) + 24px); }
+.yam-figure { max-width: var(--content-width); margin: 0 auto 40px; }
+.yam-figure img { width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-card); }
+.yam-figure figcaption { margin-top: 12px; font-size: 13px; color: var(--text-sub); text-align: center; }
+.yam-table-frame { overflow: hidden; border: 1px solid var(--border-soft); border-radius: var(--radius-card); background: var(--surface); }
+.yam-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 15px; line-height: 1.8; }
+.yam-table caption { padding: 16px; text-align: left; font-weight: 500; background: var(--surface); }
+.yam-table th, .yam-table td { width: 30%; padding: 16px; border-bottom: 1px solid var(--border-soft); vertical-align: middle; overflow-wrap: anywhere; }
+.yam-table th:first-child { width: 40%; text-align: left; }
+.yam-table th { font-weight: 500; }
+.yam-table thead th { background: var(--primary-soft); text-align: center; }
+.yam-table tbody td { text-align: center; font-variant-numeric: tabular-nums; }
+.yam-table tbody td:nth-child(2) { background: rgba(248, 210, 201, 0.18); }
+.yam-table tbody tr:last-child > * { border-bottom: 0; }
+.yam-table--taste th:first-child { width: 34%; }
+.yam-table--taste th, .yam-table--taste td { width: 33%; }
+.yam-table--taste tbody td { text-align: left; }
+.yam-table small { display: block; font-size: 13px; font-weight: 400; }
+.yam-more { margin-top: 24px; }
+.yam-more summary { cursor: pointer; padding: 16px; border: 1px solid var(--border-soft); border-radius: var(--radius-input); font-weight: 500; background: var(--surface); }
+.yam-more[open] summary { margin-bottom: 16px; }
+.yam-notes { margin-top: 24px; font-size: 13px; line-height: 1.9; }
+.yam-notes a { text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.yam-notes p { margin-bottom: 12px; }
+.yam-recipe { list-style: none; counter-reset: yam-step; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.yam-recipe li { counter-increment: yam-step; border-top: 1px solid var(--border-soft); padding-top: 24px; }
+.yam-recipe li::before { content: "0" counter(yam-step); display: block; font-size: 13px; color: var(--text-sub); margin-bottom: 12px; }
+.yam-recipe h3 { margin-bottom: 16px; }
+.yam-after-recipe { margin-top: 40px; }
+@media (max-width: 767px) {
+  .yam-table { font-size: 14px; }
+  .yam-table th, .yam-table td { padding: 12px 8px; }
+  .yam-table caption { padding: 12px; font-size: 13px; }
+  .yam-recipe { grid-template-columns: 1fr; }
+  .yam-page section[id] { scroll-margin-top: calc(var(--header-h-mobile) + 24px); }
+}
