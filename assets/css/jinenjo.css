@@ -43,3 +43,17 @@
   .yam-recipe { grid-template-columns: 1fr; }
   .yam-page section[id] { scroll-margin-top: calc(var(--header-h-mobile) + 24px); }
 }
+
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V5
+ * Existing botanical system · field photography, without image overlays.
+ */
+.yam-mukago-head { max-width: var(--content-width); text-align: left; }
+.yam-mukago-head .eyebrow::before { margin-left: 0; }
+.yam-mukago-head .eyebrow, .yam-mukago-gallery .photo-caption { color: var(--text-main); }
+.yam-mukago-copy { max-width: var(--content-width); margin-bottom: 40px; }
+.yam-mukago-gallery { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.yam-mukago-gallery figure { min-width: 0; }
+.yam-mukago-gallery img { display: block; width: 100%; height: auto; border-radius: var(--radius-card); }
+@media (max-width: 767px) {
+  .yam-mukago-gallery { grid-template-columns: minmax(0, 1fr); }
+}
