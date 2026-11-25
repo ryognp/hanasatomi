@@ -262,10 +262,6 @@
     {
       "slug": "jinenjo-butter-soy",
       "title": "自然薯のフレンチフライ",
-      "headingLines": [
-        "自然薯の",
-        "フレンチフライ"
-      ],
       "category": "jinenjo",
       "categoryLabel": "自然薯",
       "description": "こんがり焼いた自然薯に、バターと青のりを絡めて。香ばしい風味を楽しむ、おかずにもおつまみにも合う一品です。",
@@ -323,7 +319,8 @@
       ],
       "note": "",
       "references": [],
-      "updatedAt": "2026-11-26"
+      "updatedAt": "2026-11-26",
+      "singleLineTitle": true
     }
   ]
 }
