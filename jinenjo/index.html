@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
-<link rel="stylesheet" href="/assets/css/styles.css?v=20260710-polish2">
+<link rel="stylesheet" href="/assets/css/styles.css?v=20261126-recipe-nav">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -66,6 +66,7 @@
     <nav class="nav" id="site-nav">
       <a href="/about/">はなさとみについて</a>
       <a href="/jinenjo/" aria-current="page">自然薯について</a>
+      <a href="/recipes/">自然薯レシピ</a>
       <a href="/wholesale/">飲食店・小売店の方へ</a>
       <a href="/coming-soon/">一般販売について</a>
       <a href="/#company">会社概要</a>
@@ -83,7 +84,7 @@
     <span class="eyebrow">ABOUT JINENJO</span>
     <h1>自然薯と長芋の違い</h1>
     <p class="lead">香りや粘り、食べ方、栄養成分。<br>身近な長芋と比べながら、自然薯の魅力をご紹介します。</p>
-    <nav class="yam-jumps" aria-label="このページの目次"><a href="#difference">食感・食べ方の違い</a><a href="#nutrition">栄養成分の比較</a><a href="#how-to-eat">とろろの作り方</a><a href="#ume-shiso">梅しそ和えの材料</a><a href="#mukago">むかごの風景</a></nav>
+    <nav class="yam-jumps" aria-label="このページの目次"><a href="#difference">食感・食べ方の違い</a><a href="#nutrition">栄養成分の比較</a><a href="/recipes/">自然薯レシピ</a><a href="#mukago">むかごの風景</a></nav>
   </div>
 </section>
 <section class="section section--surface" id="difference" aria-labelledby="difference-heading">
@@ -153,42 +154,11 @@
     </div>
   </div>
 </section>
-<section class="section section--surface" id="how-to-eat" aria-labelledby="eat-heading">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">HOW TO ENJOY</span><h2 id="eat-heading">まずは、とろろごはんで。</h2></div>
-    <p class="yam-lead">洗って、すりおろして、だしを合わせる。自然薯の香りと粘りを味わう、シンプルな食べ方です。</p>
-    <ol class="yam-recipe">
-      <li><h3>土を洗い落とす</h3><p>流水で土をよく洗い、ひげ根を取り除きます。薄皮ごとすりおろす食べ方もありますが、なめらかな口当たりがお好みなら皮をむいてください。</p></li>
-      <li><h3>なめらかにする</h3><p>おろし器ですりおろし、すり鉢でよく混ぜます。自然薯ならではのもっちりとした粘りを感じられます。</p></li>
-      <li><h3>だしを少しずつ</h3><p>冷ましただしを少しずつ加え、そのつどよく混ぜて好みの濃さに。しょうゆなどで味を整え、ごはんにかけます。</p></li>
-    </ol>
-    <p class="yam-lead yam-after-recipe">麦ごはんにたっぷりとかけたり、おそばに添えたり。ねぎや刻みのり、わさびを少し添えて、わが家のとろろをお楽しみください。</p>
-  </div>
-</section>
-<section class="section section--soft" id="ume-shiso" aria-labelledby="ume-shiso-heading">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">ON THE TABLE</span>
-      <h2 id="ume-shiso-heading">自然薯の梅しそ和え</h2>
-      <p>梅干しと大葉、白いりごまを合わせた自然薯の一品。</p>
-    </div>
-    <div class="yam-dish">
-      <figure class="yam-dish-photo">
-        <img src="/assets/images/jinenjo-ume-shiso-20261126.jpg" alt="自然薯の短冊に梅干し、大葉、ごまを合わせた梅しそ和え" width="1280" height="852" loading="lazy" decoding="async">
-      </figure>
-      <div class="yam-dish-materials">
-        <h3>材料</h3>
-        <dl class="yam-ingredients">
-          <div><dt>自然薯</dt><dd>300g</dd></div>
-          <div><dt>大葉</dt><dd>5枚</dd></div>
-          <div><dt>梅干し</dt><dd>1〜2個</dd></div>
-          <div><dt>めんつゆ <small>（3倍濃縮）</small></dt><dd>小さじ1</dd></div>
-          <div><dt>酢</dt><dd>小さじ1</dd></div>
-          <div><dt>白いりごま</dt><dd>大さじ1</dd></div>
-          <div><dt>かつお節</dt><dd>お好みで</dd></div>
-        </dl>
-      </div>
-    </div>
+<section class="section section--soft" id="how-to-eat" aria-labelledby="eat-heading">
+  <div class="container container--narrow">
+    <span id="ume-shiso" aria-hidden="true"></span>
+    <div class="section-head"><span class="eyebrow">RECIPES</span><h2 id="eat-heading">食卓で楽しむ、自然薯とむかご。</h2><p>とろろごはんや和えもの、むかごを使った一品まで。<br>写真と材料、作り方をご紹介しています。</p></div>
+    <div class="center"><a href="/recipes/" class="btn btn--primary">自然薯レシピを見る</a></div>
   </div>
 </section>
 <!-- 畑のむかご：手のひらの写真を主役に、つるの風景を添える -->
@@ -214,6 +184,7 @@
         <span class="eyebrow">FROM FIELD TO TABLE</span>
         <h3>むかごを、ごはんと。</h3>
         <p>むかごご飯も、自然薯の楽しみのひとつ。畑で出会った小さなむかごが、食卓の一杯になります。</p>
+        <a href="/recipes/mukago-rice/" class="btn btn--secondary">むかごご飯の作り方</a>
       </div>
       <figure class="yam-dish-photo">
         <img src="/assets/images/mukago-rice-20261126.jpg" alt="むかごを炊き込んだごはんを茶碗に盛ったむかごご飯" width="1280" height="853" loading="lazy" decoding="async">
@@ -243,6 +214,7 @@
           <h4>サイト</h4>
           <ul>
             <li><a href="/about/">はなさとみについて</a></li>
+            <li><a href="/recipes/">自然薯レシピ</a></li>
             <li><a href="/jinenjo/">自然薯について</a></li>
             <li><a href="/wholesale/">飲食店・小売店の方へ</a></li>
             <li><a href="/coming-soon/">一般販売について</a></li>

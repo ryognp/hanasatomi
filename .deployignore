@@ -40,3 +40,9 @@ todo.md
 # 公開ページから参照されない画像の元データ（PNG生成用）
 assets/images/ogp.svg
 assets/images/icon-master.svg
+
+# Recipe source and development tools (HTML is generated before deployment)
+content/
+scripts/
+tests/
+docs/
