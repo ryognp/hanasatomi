@@ -12,7 +12,7 @@ test('all recipes have complete linked pages with the provided quantities',()=>{
 });
 test('a future recipe appears in the list, detail pages, related links and sitemap without template changes',()=>{
  const extra={...recipes[0],slug:'future-recipe',title:'追加レシピの確認'};
- const all=[...recipes,extra];const pages=buildRecipeOutputs(all,chrome);assert.equal(pages.size,all.length+1);assert.ok(pages.get('recipes/index.html').includes('/recipes/future-recipe/'));assert.ok(pages.has('recipes/future-recipe/index.html'));assert.ok(pages.get('recipes/tororo-rice/index.html').includes('/recipes/future-recipe/'));
+ const all=[...recipes,extra];const pages=buildRecipeOutputs(all,chrome);assert.equal(pages.size,all.length+1);assert.ok(pages.get('recipes/index.html').includes('/recipes/future-recipe/'));assert.ok(pages.has('recipes/future-recipe/index.html'));assert.ok(pages.get('recipes/future-recipe/index.html').includes('/recipes/tororo-rice/')); // Related recipes show up to two existing dishes; an appended dish need not appear on every older page.
  const base='<?xml version="1.0"?><urlset><url><loc>https://hanasatomi.com/</loc></url></urlset>';const map=buildSitemap(base,all);assert.ok(map.includes('/recipes/future-recipe/'));assert.equal(buildSitemap(map,all),map);
 });
 test('invalid slugs and duplicate routes are rejected; recipe text is safely escaped',()=>{
